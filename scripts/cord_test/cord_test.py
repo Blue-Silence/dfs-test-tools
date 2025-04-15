@@ -91,7 +91,7 @@ def main():
         print(f"\t\tInit {tag} done")
 
     barrier_1.wait()
-    print('All init done')
+    print('\tAll init done')
     start_time = time.perf_counter()  # 获取开始时间
     
 
@@ -103,7 +103,7 @@ def main():
         thread.join()
 
     elapsed_time = (end_time - start_time)  # 转换为微秒
-    print(f"所有程序执行完毕，总共耗时 {elapsed_time:.2f}s")
+    print(f"Test time: {elapsed_time:.2f}s")
 
     with open(f"{OUT_PREFIX}/{TEST_NAME}.txt", "a") as file:
         elapsed_time_us = (end_time - start_time) * 1_000_000  # 转换为微秒
