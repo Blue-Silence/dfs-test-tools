@@ -1,0 +1,6 @@
+thread = 4
+max_parallel = 60
+max_iter = 2000
+root_path = "/mnt/beegfs"
+skew_dir_cnt = 0
+seed = 123
