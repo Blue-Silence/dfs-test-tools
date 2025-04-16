@@ -14,7 +14,6 @@ struct TestConfig {
     pub max_parallel: usize,
 
     pub root_path: String,
-    //pub dir_per_task: usize,
     pub file_per_dir_per_spwan: usize,
     pub op_per_spawn: usize,
 
@@ -184,7 +183,7 @@ impl DirSyncTest {
 }
 
 
-use std::fs::{self, Permissions};
+use std::fs::Permissions;
 use std::os::unix::fs::PermissionsExt;
 
 async fn modify_permissions(i: usize, path: &str) -> std::io::Result<()> {
