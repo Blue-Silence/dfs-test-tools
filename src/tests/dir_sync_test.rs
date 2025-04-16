@@ -188,7 +188,7 @@ use std::os::unix::fs::PermissionsExt;
 
 async fn modify_permissions(i: usize, path: &str) -> std::io::Result<()> {
     if i % 2 == 0 {
-        let read_only_permissions = Permissions::from_mode(0o444);  // 所有用户只能读，不能写
+        let read_only_permissions = Permissions::from_mode(0o555);  // 所有用户只能读，不能写
         set_permissions(path, read_only_permissions).await?;
     } else {
         let read_write_permissions = Permissions::from_mode(0o755);  // 所有者可读写，其他用户可读
