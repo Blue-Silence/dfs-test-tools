@@ -144,9 +144,10 @@ impl DirContentionTest {
             self.file_ps.push(vec![]);
             for _ in 0..conf.op_per_spawn {
                 self.file_ps[i].push(
-                    all_file_ps[*dir_ids.choose(&mut rng).unwrap()]
+                    all_file_ps
                         .choose(&mut rng)
                         .unwrap()
+                        [*dir_ids.choose(&mut rng).unwrap()]
                         .choose(&mut rng)
                         .unwrap()
                         .clone(),
