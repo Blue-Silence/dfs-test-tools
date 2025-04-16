@@ -1,6 +1,10 @@
 use serde::Deserialize;
-use tokio::fs::{self, create_dir};
 use std::io::{self, Write};
+use tokio::fs::{self, create_dir};
+
+use rand::rngs::StdRng;
+use rand::seq::SliceRandom;
+use rand::SeedableRng;
 
 use crate::Test;
 
@@ -8,15 +12,18 @@ use crate::Test;
 struct TestConfig {
     pub thread: usize,
     pub max_parallel: usize,
-    pub max_iter: usize,
+
     pub root_path: String,
+    pub dir_cnt: usize,
+    pub file_per_dir_per_spwan: usize,
+    pub op_per_spawn: usize,
     pub skew_dir_cnt: usize,
-    pub seed: u64,
 }
 
 pub struct DirContentionTest {
     conf: Option<TestConfig>,
-    unique_id: String,
+    unique_id: usize,
+    all_task_cnt: usize,
 
     //Then starts the unique part for the test.
     file_ps: Vec<Vec<String>>,
@@ -26,7 +33,8 @@ impl DirContentionTest {
     pub fn new() -> Self {
         DirContentionTest {
             conf: None,
-            unique_id: "".to_string(),
+            unique_id: 0,
+            all_task_cnt: 0,
             file_ps: vec![],
         }
     }
@@ -37,9 +45,10 @@ impl Test for DirContentionTest {
         "Dir Contention Test"
     }
 
-    fn set_config(&mut self, config: String, unique_id: String) {
+    fn set_config(&mut self, config: String, unique_id: usize, all_task_cnt: usize) {
         self.conf = Some(toml::from_str(&config).unwrap());
         self.unique_id = unique_id;
+        self.all_task_cnt = all_task_cnt;
     }
 
     //#[tokio::main]
@@ -48,63 +57,101 @@ impl Test for DirContentionTest {
             return false;
         }
         tokio::runtime::Builder::new_multi_thread()
-        .worker_threads(self.conf.clone().unwrap().thread)
-        .enable_all()
-        .build()
-        .unwrap()
-        .block_on(async {
-            self.init_help().await
-        })
+            .worker_threads(self.conf.clone().unwrap().thread)
+            .enable_all()
+            .build()
+            .unwrap()
+            .block_on(async { self.init_help().await })
     }
-
 
     fn run(&self) -> bool {
         if let None = self.conf {
             return false;
         }
         tokio::runtime::Builder::new_multi_thread()
-        .worker_threads(self.conf.clone().unwrap().thread)
-        .enable_all()
-        .build()
-        .unwrap()
-        .block_on(async {
-            self.run_help().await
-        })
+            .worker_threads(self.conf.clone().unwrap().thread)
+            .enable_all()
+            .build()
+            .unwrap()
+            .block_on(async { self.run_help().await })
     }
+}
+
+async fn wait_until_exist(p: &str) -> Result<(), std::io::Error> {
+    loop {
+        match fs::try_exists(p).await {
+            Ok(true) => return Ok(()),
+            Ok(false) => tokio::time::sleep(std::time::Duration::from_secs(1)).await,
+            Err(e) => return Err(e),
+        }
+    }
+}
+
+fn all_file_ps_gen(all_task_cnt: usize, conf: &TestConfig) -> Vec<Vec<Vec<String>>> {
+    (0..all_task_cnt)
+        .map(|i| {
+            (0..conf.dir_cnt)
+                .map(|j| {
+                    (0..(conf.max_parallel * conf.file_per_dir_per_spwan))
+                        .map(|k| format!("{}/dir_{}/file_{}_{}", conf.root_path, j, i, k))
+                        .collect()
+                })
+                .collect()
+        })
+        .collect()
 }
 
 impl DirContentionTest {
     async fn init_help(&mut self) -> bool {
         let conf = self.conf.clone().unwrap();
-        let mut file_ps = vec![];
+        let dir_ps: Vec<_> = (0..conf.dir_cnt)
+            .map(|i| format!("{}/dir_{}", conf.root_path, i))
+            .collect();
 
-        for i in 0..conf.max_parallel {
-            let dir_path = format!("{}/dir_{}_{}", conf.root_path, self.unique_id, i);
-            let re = create_dir(dir_path.as_str());
-            if let Err(e) = re.await {
-                panic!("Error! mkdir {}, err:{:?}", dir_path, e);
+        for dir_path in dir_ps {
+            if self.unique_id == 0 {
+                let re = create_dir(dir_path.as_str());
+                if let Err(e) = re.await {
+                    panic!("Error! mkdir {}, err:{:?}", dir_path, e);
+                }
+            } else {
+                if let Err(e) = wait_until_exist(&dir_path).await {
+                    panic!("Error! Try to find dir {}, err:{:?}", dir_path, e);
+                }
             }
+        }
 
-            file_ps.push(vec![]);
-            for j in 0..conf.max_iter {
-                let file_path = format!("{}/file_{}", dir_path, j);
+        let all_file_ps = all_file_ps_gen(self.all_task_cnt, &conf);
+
+        for p1 in all_file_ps[self.unique_id].clone() {
+            for file_path in p1 {
                 let re = fs::File::create(file_path.as_str());
                 if let Err(e) = re.await {
                     panic!("Error! file create {}, err:{:?}", file_path, e);
                 }
-                file_ps[i].push(file_path);
             }
         }
 
-        let choosen_dir_id = if conf.skew_dir_cnt == 0 {
-            (0..conf.max_parallel).collect()
+        let skew_dir_cnt = if conf.skew_dir_cnt == 0 {
+            conf.dir_cnt
         } else {
-            get_random_numbers_in_range(0, conf.max_parallel - 1, conf.skew_dir_cnt, conf.seed)
+            conf.skew_dir_cnt
         };
 
-        for k in 0..conf.max_parallel {
-            self.file_ps
-                .push(file_ps[choosen_dir_id[k & choosen_dir_id.len()]].to_owned());
+        let dir_ids: Vec<_> = (0..skew_dir_cnt).collect();
+        let mut rng = StdRng::seed_from_u64(self.unique_id as u64);
+        for i in 0..conf.max_parallel {
+            self.file_ps.push(vec![]);
+            for _ in 0..conf.op_per_spawn {
+                self.file_ps[i].push(
+                    all_file_ps[*dir_ids.choose(&mut rng).unwrap()]
+                        .choose(&mut rng)
+                        .unwrap()
+                        .choose(&mut rng)
+                        .unwrap()
+                        .clone(),
+                );
+            }
         }
         return true;
     }
@@ -117,7 +164,7 @@ impl DirContentionTest {
                 let file_ps = &self.file_ps[i];
                 //let mut topo = topo.clone();
                 s.spawn(async move {
-                    for j in 0..conf.max_iter {
+                    for j in 0..conf.op_per_spawn {
                         let re = fs::metadata(&file_ps[j]);
                         if let Err(e) = re.await {
                             println!("Error!:{:?}", e);
@@ -133,16 +180,3 @@ impl DirContentionTest {
     }
 }
 
-use rand::rngs::StdRng;
-use rand::seq::SliceRandom; // 用于随机选择切片中的元素
-use rand::SeedableRng;
-
-fn get_random_numbers_in_range(min: usize, max: usize, n: usize, seed: u64) -> Vec<usize> {
-    let mut rng = StdRng::seed_from_u64(seed);
-    let range: Vec<usize> = (min..=max).collect();
-    let mut selected_numbers = Vec::with_capacity(n);
-    range
-        .choose_multiple(&mut rng, n)
-        .for_each(|&num| selected_numbers.push(num));
-    selected_numbers
-}

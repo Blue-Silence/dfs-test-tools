@@ -1,6 +1,7 @@
 thread = 4
 max_parallel = 60
-max_iter = 2000
 root_path = "/mnt/beegfs"
+dir_cnt = 20
+file_per_dir_per_spwan = 10000
+op_per_spawn = 2000
 skew_dir_cnt = 0
-seed = 123

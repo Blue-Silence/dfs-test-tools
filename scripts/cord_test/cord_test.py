@@ -80,12 +80,12 @@ def main():
     print(f"\tAll init start")
 
     # 创建Barrier对象，等待n+1个线程同步
-    barrier_1 = threading.Barrier(len(TAGS)+1)
-    barrier_2 = threading.Barrier(len(TAGS)+1)
+    barrier_1 = threading.Barrier(PARALLELISM+1)
+    barrier_2 = threading.Barrier(PARALLELISM+1)
     # 启动所有程序线程
     threads = []
-    for tag in TAGS:
-        thread = ProgramThread(f"{TEST_PROGRAM} {TEST_NAME} {TEST_CONF_PATH} {tag}", input_s, blocking_output_1, barrier_1, blocking_output_2, barrier_2)
+    for tag in range(0, PARALLELISM):
+        thread = ProgramThread(f"{TEST_PROGRAM} {TEST_NAME} {TEST_CONF_PATH} {tag} {PARALLELISM}", input_s, blocking_output_1, barrier_1, blocking_output_2, barrier_2)
         threads.append(thread)
         thread.start()
         print(f"\t\tInit {tag} done")

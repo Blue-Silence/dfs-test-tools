@@ -8,7 +8,8 @@ fn main() {
 
     let conf =
         &std::fs::read_to_string(args[2].as_str()).expect("Should have been able to read the file");
-    let unique_id = args[3].as_str();
+    let unique_id = args[3].parse().unwrap();
+    let all_task_cnt = args[4].parse().unwrap();
 
     let test = get_tests(test_name);
     if let None = test {
@@ -16,7 +17,7 @@ fn main() {
     }
     let mut test = test.unwrap();
 
-    test.set_config(conf.clone(), unique_id.to_string());
+    test.set_config(conf.clone(), unique_id, all_task_cnt);
 
     test.init();
     flush_out("Ready");

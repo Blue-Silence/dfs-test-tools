@@ -7,4 +7,4 @@ OUT_PREFIX = '/local/perf'
 
 PARALLELISM = 8
 
-TAGS = 'abcdefghijklmnopqrstuvwxyz'[slice(0,PARALLELISM)]
+# TAGS = 'abcdefghijklmnopqrstuvwxyz'[slice(0,PARALLELISM)]
