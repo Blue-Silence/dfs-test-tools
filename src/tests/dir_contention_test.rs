@@ -1,6 +1,6 @@
 use serde::Deserialize;
 use std::io::{self, Write};
-use tokio::fs::{self, create_dir};
+use tokio::fs::{self, create_dir, set_permissions};
 
 use rand::rngs::StdRng;
 use rand::seq::SliceRandom;
@@ -166,7 +166,8 @@ impl DirContentionTest {
                 //let mut topo = topo.clone();
                 s.spawn(async move {
                     for j in 0..conf.op_per_spawn {
-                        let re = fs::metadata(&file_ps[j]);
+                        //let re = fs::metadata(&file_ps[j]);
+                        let re = modify_permissions(j, &file_ps[j]);
                         if let Err(e) = re.await {
                             println!("Error!:{:?}", e);
                             io::stdout().flush().unwrap();
@@ -181,3 +182,17 @@ impl DirContentionTest {
     }
 }
 
+
+use std::fs::Permissions;
+use std::os::unix::fs::PermissionsExt;
+
+async fn modify_permissions(i: usize, path: &str) -> std::io::Result<()> {
+    if i % 2 == 0 {
+        let read_only_permissions = Permissions::from_mode(0o555);  // 所有用户只能读，不能写
+        set_permissions(path, read_only_permissions).await?;
+    } else {
+        let read_write_permissions = Permissions::from_mode(0o755);  // 所有者可读写，其他用户可读
+        set_permissions(path, read_write_permissions).await?;
+    }
+    return Ok(());
+}
