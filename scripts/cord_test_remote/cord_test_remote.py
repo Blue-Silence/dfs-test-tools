@@ -4,7 +4,8 @@ import paramiko
 import time
 import os
 
-from test_config import * 
+from test_config import *
+from dist_config import REMOTE_ROOT_DIR, REMOTE_NODES, USERNAME
 
 blocking_output_1 = 'Ready'
 blocking_output_2 = 'Done'
@@ -25,14 +26,11 @@ class RemoteProgramThread(threading.Thread):
     def run(self):
         ssh_client = paramiko.SSHClient()
         ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        # 尝试使用默认密钥进行连接，通常是 ~/.ssh/id_rsa
-        private_key = paramiko.RSAKey.from_private_key_file(os.path.expanduser("~/.ssh/id_rsa"))
-        # 通过密钥连接远程主机
-        ssh_client.connect(self.host, username=self.username, pkey=private_key)
+        ssh_client.connect(self.host, username=self.username)
 
 
         ssh_stdin, ssh_stdout, ssh_stderr = ssh_client.exec_command(self.command)
-        
+        # print(f"Exec: {self.command}")
 
         # 检查输出，直到输出包含指定的阻塞点标志1
         output = ''
@@ -48,6 +46,9 @@ class RemoteProgramThread(threading.Thread):
                 break
             else:
                 print(f"{self.blocking_output_1} not in {output}")
+                print(ssh_stdout.read().decode())
+                print(ssh_stderr.read().decode())
+                exit(1)
 
         # 到达阻塞点后，等待其他程序一起同步
         #print('Barrier 1 reached')
@@ -92,16 +93,21 @@ def main():
 
     print(f"\tAll init start")
 
+    total_parallel = len(REMOTE_NODES) * PARALLELISM
     # 创建Barrier对象，等待n+1个线程同步
-    barrier_1 = threading.Barrier(PARALLELISM+1)
-    barrier_2 = threading.Barrier(PARALLELISM+1)
+    barrier_1 = threading.Barrier(total_parallel+1)
+    barrier_2 = threading.Barrier(total_parallel+1)
     # 启动所有程序线程
     threads = []
-    for tag in range(0, PARALLELISM):
-        thread = RemoteProgramThread(f"{TEST_PROGRAM} {TEST_NAME} {TEST_CONF_PATH} {tag} {PARALLELISM}", input_s, blocking_output_1, barrier_1, blocking_output_2, barrier_2)
-        threads.append(thread)
-        thread.start()
-        print(f"\t\tInit {tag} start")
+    tag = 0
+    for idx, host in enumerate(REMOTE_NODES):
+        remote_dir = f"{REMOTE_ROOT_DIR}/TEST_NODE_{idx}"
+        for _ in range(0, PARALLELISM):
+            thread = RemoteProgramThread(f"{remote_dir}/{TEST_PROGRAM} {TEST_NAME} {remote_dir}/{TEST_CONF} {tag} {total_parallel}", input_s, blocking_output_1, barrier_1, blocking_output_2, barrier_2, host, USERNAME)
+            threads.append(thread)
+            thread.start()
+            print(f"\t\tInit {tag} on node {host} start")
+            tag = tag + 1
 
     barrier_1.wait()
     print('\tAll init done')
