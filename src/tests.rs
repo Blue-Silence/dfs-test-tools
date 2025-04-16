@@ -1,5 +1,6 @@
 mod dir_contention_test;
 mod dir_sync_test;
+mod dir_sync_pair_test;
 
 use crate::Test;
 
@@ -9,6 +10,7 @@ pub fn get_tests(name: &str) -> Option<Box<dyn Test>> {//HashMap<String, Box<dyn
         //"DirContentionMultiCliTest" => Some(Box::new(dir_contention_multi_cli_test::DirContentionMultiCliTest::new())),
         //"DirSyncTest" => Some(Box::new(dir_sync_test::DirSyncTest::new())),
         "DirSyncTest" => Some(Box::new(dir_sync_test::DirSyncTest::new())),
+        "DirSyncPairTest" => Some(Box::new(dir_sync_pair_test::DirSyncPairTest::new())),
         _ => None,
     }
 } 
