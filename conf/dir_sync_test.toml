@@ -1,7 +1,7 @@
 thread = 4
 max_parallel = 60
 root_path = "/mnt/beegfs"
-file_per_dir_per_spwan = 200
+file_per_spwan = 200
 op_per_spawn = 2000
 enable_mix = true
 set_permission_ratio = 100

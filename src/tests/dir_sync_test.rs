@@ -14,7 +14,7 @@ struct TestConfig {
     pub max_parallel: usize,
 
     pub root_path: String,
-    pub file_per_dir_per_spwan: usize,
+    pub file_per_spawn: usize,
     pub op_per_spawn: usize,
 
     pub enable_mix: bool,
@@ -84,7 +84,7 @@ impl Test for DirSyncTest {
 fn all_file_ps_gen(unique_id: usize, conf: &TestConfig) -> Vec<Vec<String>> {
     (0..conf.max_parallel)
         .map(|j| {
-            (0..(conf.max_parallel * conf.file_per_dir_per_spwan))
+            (0..conf.file_per_spawn)
                 .map(|k| format!("{}/dir_{}_{}/file_{}", conf.root_path, unique_id, j, k))
                 .collect()
         })
