@@ -133,7 +133,6 @@ impl DirSyncPairTest {
             for j in 0..conf.op_per_spawn {
                 self.file_ps[i].push(all_file_ps[i].choose(&mut rng).unwrap().clone());
                 if j % conf.set_permission_ratio == 1 {
-                    all_dir_ps[(self.unique_id + 1) % all_dir_ps.len()].choose(&mut rng).unwrap()
                     let p = if conf.enable_mix {
                         all_dir_ps[(self.unique_id + 1) % all_dir_ps.len()].choose(&mut rng).unwrap()
                     } else {
