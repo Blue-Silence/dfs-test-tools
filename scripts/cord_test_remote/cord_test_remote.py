@@ -103,7 +103,7 @@ def main():
     for idx, host in enumerate(REMOTE_NODES):
         remote_dir = f"{REMOTE_ROOT_DIR}/TEST_NODE_{idx}"
         for _ in range(0, PARALLELISM):
-            thread = RemoteProgramThread(f"{remote_dir}/{TEST_PROGRAM} {TEST_NAME} {remote_dir}/{TEST_CONF} {tag} {total_parallel}", input_s, blocking_output_1, barrier_1, blocking_output_2, barrier_2, host, USERNAME)
+            thread = RemoteProgramThread(f"cd {remote_dir} && {remote_dir}/{TEST_PROGRAM} {TEST_NAME} {remote_dir}/{TEST_CONF} {tag} {total_parallel}", input_s, blocking_output_1, barrier_1, blocking_output_2, barrier_2, host, USERNAME)
             threads.append(thread)
             thread.start()
             print(f"\t\tInit {tag} on node {host} start")

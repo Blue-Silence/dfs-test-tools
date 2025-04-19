@@ -1,4 +1,4 @@
-root_path = "./1.log"
+trace_path = "./1.log"
 thread = 4
 max_parallel = 60
 root_path = "/mnt/beegfs"
