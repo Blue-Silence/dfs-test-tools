@@ -1,6 +1,6 @@
 use std::io::{self, Write};
 
-use dfs_test_tools::tests::get_tests;
+use dfs_test_tools::{tests::get_tests, ClientGen};
 
 fn main() {
     let args: Vec<String> = std::env::args().collect();
@@ -19,7 +19,7 @@ fn main() {
 
     test.set_config(conf.clone(), unique_id, all_task_cnt);
 
-    test.init();
+    test.init(ClientGen{});
     flush_out("Ready");
 
     wait_input();

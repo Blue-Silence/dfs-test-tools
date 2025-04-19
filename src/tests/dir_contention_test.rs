@@ -1,12 +1,11 @@
 use serde::Deserialize;
 use std::io::{self, Write};
-use tokio::fs::{self, create_dir, set_permissions};
 
 use rand::rngs::StdRng;
 use rand::seq::SliceRandom;
 use rand::SeedableRng;
 
-use crate::Test;
+use crate::{Client, ClientGen, FSClient, Test};
 
 #[derive(Deserialize, Debug, Clone)]
 struct TestConfig {
@@ -26,6 +25,7 @@ pub struct DirContentionTest {
     all_task_cnt: usize,
 
     //Then starts the unique part for the test.
+    clients: Vec<Client>,
     file_ps: Vec<Vec<String>>,
 }
 
@@ -35,6 +35,7 @@ impl DirContentionTest {
             conf: None,
             unique_id: 0,
             all_task_cnt: 0,
+            clients: vec![],
             file_ps: vec![],
         }
     }
@@ -52,7 +53,7 @@ impl Test for DirContentionTest {
     }
 
     //#[tokio::main]
-    fn init(&mut self) -> bool {
+    fn init(&mut self, c_gen: ClientGen) -> bool {
         if let None = self.conf {
             return false;
         }
@@ -61,10 +62,10 @@ impl Test for DirContentionTest {
             .enable_all()
             .build()
             .unwrap()
-            .block_on(async { self.init_help().await })
+            .block_on(async { self.init_help(c_gen).await })
     }
 
-    fn run(&self) -> bool {
+    fn run(&mut self) -> bool {
         if let None = self.conf {
             return false;
         }
@@ -77,9 +78,9 @@ impl Test for DirContentionTest {
     }
 }
 
-async fn wait_until_exist(p: &str) -> Result<(), std::io::Error> {
+async fn wait_until_exist(client: &mut Client, p: &str) -> Result<(), String> {
     loop {
-        match fs::try_exists(p).await {
+        match client.try_exist(p).await {
             Ok(true) => return Ok(()),
             Ok(false) => tokio::time::sleep(std::time::Duration::from_secs(1)).await,
             Err(e) => return Err(e),
@@ -102,20 +103,24 @@ fn all_file_ps_gen(all_task_cnt: usize, conf: &TestConfig) -> Vec<Vec<Vec<String
 }
 
 impl DirContentionTest {
-    async fn init_help(&mut self) -> bool {
+    async fn init_help(&mut self, mut c_gen: ClientGen) -> bool {
         let conf = self.conf.clone().unwrap();
         let dir_ps: Vec<_> = (0..conf.dir_cnt)
             .map(|i| format!("{}/dir_{}", conf.root_path, i))
             .collect();
 
+        for _ in 0..conf.max_parallel {
+            self.clients.push(c_gen.new_client());
+        }
+
         for dir_path in dir_ps {
             if self.unique_id == 0 {
-                let re = create_dir(dir_path.as_str());
+                let re = self.clients[0].create_dir(dir_path.as_str());
                 if let Err(e) = re.await {
                     panic!("Error! mkdir {}, err:{:?}", dir_path, e);
                 }
             } else {
-                if let Err(e) = wait_until_exist(&dir_path).await {
+                if let Err(e) = wait_until_exist(&mut self.clients[0], &dir_path).await {
                     panic!("Error! Try to find dir {}, err:{:?}", dir_path, e);
                 }
             }
@@ -125,7 +130,7 @@ impl DirContentionTest {
 
         for p1 in all_file_ps[self.unique_id].clone() {
             for file_path in p1 {
-                let re = fs::File::create(file_path.as_str());
+                let re = self.clients[0].file_create(file_path.as_str());
                 if let Err(e) = re.await {
                     panic!("Error! file create {}, err:{:?}", file_path, e);
                 }
@@ -157,17 +162,17 @@ impl DirContentionTest {
         return true;
     }
 
-    async fn run_help(&self) -> bool {
+    async fn run_help(&mut self) -> bool {
         let conf = self.conf.clone().unwrap();
 
         async_scoped::TokioScope::scope_and_block(|s| {
-            for i in 0..conf.max_parallel {
+            for (i, client) in self.clients.iter_mut().enumerate() {
                 let file_ps = &self.file_ps[i];
                 //let mut topo = topo.clone();
                 s.spawn(async move {
                     for j in 0..conf.op_per_spawn {
                         //let re = fs::metadata(&file_ps[j]);
-                        let re = modify_permissions(j, &file_ps[j]);
+                        let re = modify_permissions(client, j, &file_ps[j]);
                         if let Err(e) = re.await {
                             println!("Error!:{:?}", e);
                             io::stdout().flush().unwrap();
@@ -183,16 +188,10 @@ impl DirContentionTest {
 }
 
 
-use std::fs::Permissions;
-use std::os::unix::fs::PermissionsExt;
-
-async fn modify_permissions(i: usize, path: &str) -> std::io::Result<()> {
+async fn modify_permissions(client: &mut Client, i: usize, path: &str) -> Result<(), String> {
     if i % 2 == 0 {
-        let read_only_permissions = Permissions::from_mode(0o555);  // 所有用户只能读，不能写
-        set_permissions(path, read_only_permissions).await?;
+        return client.change_permission(path, 0o555).await;
     } else {
-        let read_write_permissions = Permissions::from_mode(0o755);  // 所有者可读写，其他用户可读
-        set_permissions(path, read_write_permissions).await?;
+        return client.change_permission(path, 0o755).await;
     }
-    return Ok(());
 }
