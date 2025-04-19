@@ -60,13 +60,15 @@ impl TraceEvent {
             Some(Ok(TraceEvent::DirStat {
                 path: path_and_filename.to_string(),
             }))
-        } else if s.starts_with("WARNING") {
+        } /* else if s.starts_with("WARNING") {
             None
         } else if s.starts_with("////") {
             None
         }
+        */
         else {
-            Some(Err(()))
+            //Some(Err(()))
+            None
         }
     }
 }
