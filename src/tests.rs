@@ -1,6 +1,7 @@
 mod dir_contention_test;
 mod dir_sync_test;
 mod dir_sync_pair_test;
+mod trace_test;
 
 use crate::Test;
 
@@ -11,6 +12,7 @@ pub fn get_tests(name: &str) -> Option<Box<dyn Test>> {//HashMap<String, Box<dyn
         //"DirSyncTest" => Some(Box::new(dir_sync_test::DirSyncTest::new())),
         "DirSyncTest" => Some(Box::new(dir_sync_test::DirSyncTest::new())),
         "DirSyncPairTest" => Some(Box::new(dir_sync_pair_test::DirSyncPairTest::new())),
+        "TraceTest" => Some(Box::new(trace_test::TraceTest::new())),
         _ => None,
     }
 } 
