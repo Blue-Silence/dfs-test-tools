@@ -62,7 +62,10 @@ impl TraceEvent {
             }))
         } else if s.starts_with("WARNING") {
             None
-        } else {
+        } else if s.starts_with("////") {
+            None
+        }
+        else {
             Some(Err(()))
         }
     }
