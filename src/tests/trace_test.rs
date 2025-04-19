@@ -17,7 +17,7 @@ struct TestConfig {
     pub max_parallel: usize,
 
     pub root_path: String,
-    pub op_per_spawn: usize,
+    pub iter_per_spawn: usize,
 }
 
 pub struct TraceTest {
@@ -107,7 +107,7 @@ impl TraceTest {
                 let engine = self.engines[i].clone();
                 let root_path = root_path;
                 s.spawn(async move {
-                    for j in 0..conf.op_per_spawn {
+                    for j in 0..conf.iter_per_spawn {
                         for event in events {
                             //println!("Execing: {:?}", event);
                             engine

@@ -1,0 +1,5 @@
+root_path = "./1.log"
+thread = 4
+max_parallel = 60
+root_path = "/mnt/beegfs"
+iter_per_spawn = 2000

@@ -16,9 +16,9 @@ def run_compile():
 def dist_remote():
     for idx, dst in enumerate(REMOTE_NODES):
         target_dir = f'{REMOTE_ROOT_DIR}/TEST_NODE_{idx}'
-        cmd = f'ssh {dst} "rm -rf {target_dir}; mkdir {target_dir}" && \
-            scp {LOCAL_CONFIG_PATH} {dst}:{target_dir}/ && \
-            scp {LOCAL_EXE_PATH} {dst}:{target_dir}/'
+        cmd = f'ssh {dst} "rm -rf {target_dir}; mkdir {target_dir}"'
+        for file_p in LOCAL_FILES:
+            cmd += f' && scp {file_p} {dst}:{target_dir}/'
         os.system(cmd)
 
 if __name__ == '__main__':  
