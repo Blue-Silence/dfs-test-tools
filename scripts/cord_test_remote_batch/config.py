@@ -33,9 +33,9 @@ conf.FEATURES = [
 
 conf.TEST_PROGRAM = "main"
 
-conf.TEST_NAME = 'DirContentionTest'
+conf.TEST_NAME = 'TraceTest'
 
-conf.TEST_CONF = 'dir_contention_test.toml'
+conf.TEST_CONF = 'conf.toml'
 
 conf.OUT_PREFIX = '/local/perf'
 

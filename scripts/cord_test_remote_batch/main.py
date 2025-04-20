@@ -1,6 +1,7 @@
 import os
 import shutil
 import tempfile
+import copy
 from dist import run_compile, dist_remote, clean_up
 from remote_run import remote_run
 
