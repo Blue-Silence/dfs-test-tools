@@ -1,4 +1,3 @@
-//use std::{fs::Permissions, os::unix::fs::PermissionsExt};
 
 use mds::const_def::ROOT_PERMISSION;
 use mds::server::db::type_def::{IdT, NameT};
@@ -37,8 +36,13 @@ impl InfinifsClientFactory {
 
 impl FSClient for InfinifsClient {
     async fn create_dir(&mut self, path: &String) -> Result<(), String> {
-        let re = self.cli.mkdir(path, ROOT_PERMISSION()).await;
-        to_re(re)
+        loop {
+            let re = self.cli.mkdir(path, ROOT_PERMISSION()).await;
+            match re {
+                Err(mds::client::user_error::UserError::RemoteError(mds::error::Error::MDSError(mds::error::MDSError::Locked(_)))) => tokio::time::sleep(tokio::time::Duration::from_micros(1000)).await,
+                _ => return to_re(re),
+            }
+        }
     }
 
     async fn dir_change_permission(&mut self, path: &String, mode: u32) -> Result<(), String> {

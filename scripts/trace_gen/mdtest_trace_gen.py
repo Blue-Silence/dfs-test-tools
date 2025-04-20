@@ -6,7 +6,7 @@ cmds = [
     # "./mdtest '-a=DUMMY' '-CTEr' '-R' '-n' '60000' '-vvvvv' -I 10000"
 ]
 
-for i in [100, 500, 1000, 10000, 100000]:
+for i in [100, 200, 400, 800, 1600, 3200, 6400, 12800, 25600, 51200]:
     for n in [1]: #]: //For now only 1 will work. Seems like a bug in mdtest. 
         cmds.append((f"./mdtest '-a=DUMMY' '-CTEr' '-R' '-n' '{i * n}' '-vvvvv' -I {i}", n))
 

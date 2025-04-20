@@ -16,6 +16,5 @@ mds = { git = "https://github.com/Blue-Silence/new_mds", branch = "cloudlab-test
 
 
 [features]
-default = ["native_client"]
 native_client = []
 infinifs_client = ["mds"]

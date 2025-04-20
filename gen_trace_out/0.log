@@ -1,0 +1,913 @@
+//// ./mdtest -a=DUMMY -CTEr -R -n 100 -vvvvv -I 100
+DUMMY mkdir: ./out
+DUMMY mkdir: ./out/test-dir.0-0
+WARNING: DUMMY initialized, (aiori-DUMMY.c:203).
+Command line used: ./mdtest '-a=DUMMY' '-CTEr' '-R' '-n' '100' '-vvvvv' '-I' '100'
+V-1: Rank   0 Line  2430 api                     : DUMMY
+DUMMY access: ./out
+DUMMY access: ./out/test-dir.0-0
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.0
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.1
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.2
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.3
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.4
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.5
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.6
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.7
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.8
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.9
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.10
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.11
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.12
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.13
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.14
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.15
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.16
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.17
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.18
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.19
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.20
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.21
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.22
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.23
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.24
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.25
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.26
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.27
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.28
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.29
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.30
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.31
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.32
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.33
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.34
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.35
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.36
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.37
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.38
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.39
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.40
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.41
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.42
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.43
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.44
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.45
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.46
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.47
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.48
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.49
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.50
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.51
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.52
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.53
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.54
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.55
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.56
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.57
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.58
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.59
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.60
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.61
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.62
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.63
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.64
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.65
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.66
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.67
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.68
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.69
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.70
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.71
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.72
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.73
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.74
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.75
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.76
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.77
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.78
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.79
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.80
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.81
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.82
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.83
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.84
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.85
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.86
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.87
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.88
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.89
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.90
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.91
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.92
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.93
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.94
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.95
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.96
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.97
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.98
+DUMMY mkdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.99
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.54
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.9
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.35
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.10
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.58
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.16
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.50
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.14
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.64
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.33
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.80
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.78
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.25
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.84
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.40
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.27
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.96
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.1
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.17
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.11
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.61
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.53
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.21
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.85
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.30
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.88
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.74
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.77
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.3
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.89
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.94
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.99
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.12
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.57
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.63
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.97
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.75
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.55
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.0
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.90
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.82
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.92
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.52
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.37
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.19
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.7
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.13
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.6
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.51
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.69
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.95
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.36
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.93
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.71
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.20
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.86
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.72
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.45
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.8
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.73
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.2
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.47
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.26
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.24
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.39
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.23
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.65
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.46
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.44
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.81
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.56
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.60
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.67
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.70
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.42
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.83
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.29
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.31
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.41
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.4
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.62
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.43
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.28
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.22
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.18
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.49
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.91
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.76
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.66
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.32
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.48
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.59
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.15
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.5
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.38
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.98
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.68
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.34
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.87
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.79
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.0
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.1
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.2
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.3
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.4
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.5
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.6
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.7
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.8
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.9
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.10
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.11
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.12
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.13
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.14
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.15
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.16
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.17
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.18
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.19
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.20
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.21
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.22
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.23
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.24
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.25
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.26
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.27
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.28
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.29
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.30
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.31
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.32
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.33
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.34
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.35
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.36
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.37
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.38
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.39
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.40
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.41
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.42
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.43
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.44
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.45
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.46
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.47
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.48
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.49
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.50
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.51
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.52
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.53
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.54
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.55
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.56
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.57
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.58
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.59
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.60
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.61
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.62
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.63
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.64
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.65
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.66
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.67
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.68
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.69
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.70
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.71
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.72
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.73
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.74
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.75
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.76
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.77
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.78
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.79
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.80
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.81
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.82
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.83
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.84
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.85
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.86
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.87
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.88
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.89
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.90
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.91
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.92
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.93
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.94
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.95
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.96
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.97
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.98
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/dir.mdtest.0.99
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.0 = 0x1
+DUMMY close 0x1
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.1 = 0x2
+DUMMY close 0x2
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.2 = 0x3
+DUMMY close 0x3
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.3 = 0x4
+DUMMY close 0x4
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.4 = 0x5
+DUMMY close 0x5
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.5 = 0x6
+DUMMY close 0x6
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.6 = 0x7
+DUMMY close 0x7
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.7 = 0x8
+DUMMY close 0x8
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.8 = 0x9
+DUMMY close 0x9
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.9 = 0xa
+DUMMY close 0xa
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.10 = 0xb
+DUMMY close 0xb
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.11 = 0xc
+DUMMY close 0xc
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.12 = 0xd
+DUMMY close 0xd
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.13 = 0xe
+DUMMY close 0xe
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.14 = 0xf
+DUMMY close 0xf
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.15 = 0x10
+DUMMY close 0x10
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.16 = 0x11
+DUMMY close 0x11
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.17 = 0x12
+DUMMY close 0x12
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.18 = 0x13
+DUMMY close 0x13
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.19 = 0x14
+DUMMY close 0x14
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.20 = 0x15
+DUMMY close 0x15
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.21 = 0x16
+DUMMY close 0x16
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.22 = 0x17
+DUMMY close 0x17
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.23 = 0x18
+DUMMY close 0x18
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.24 = 0x19
+DUMMY close 0x19
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.25 = 0x1a
+DUMMY close 0x1a
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.26 = 0x1b
+DUMMY close 0x1b
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.27 = 0x1c
+DUMMY close 0x1c
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.28 = 0x1d
+DUMMY close 0x1d
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.29 = 0x1e
+DUMMY close 0x1e
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.30 = 0x1f
+DUMMY close 0x1f
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.31 = 0x20
+DUMMY close 0x20
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.32 = 0x21
+DUMMY close 0x21
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.33 = 0x22
+DUMMY close 0x22
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.34 = 0x23
+DUMMY close 0x23
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.35 = 0x24
+DUMMY close 0x24
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.36 = 0x25
+DUMMY close 0x25
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.37 = 0x26
+DUMMY close 0x26
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.38 = 0x27
+DUMMY close 0x27
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.39 = 0x28
+DUMMY close 0x28
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.40 = 0x29
+DUMMY close 0x29
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.41 = 0x2a
+DUMMY close 0x2a
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.42 = 0x2b
+DUMMY close 0x2b
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.43 = 0x2c
+DUMMY close 0x2c
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.44 = 0x2d
+DUMMY close 0x2d
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.45 = 0x2e
+DUMMY close 0x2e
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.46 = 0x2f
+DUMMY close 0x2f
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.47 = 0x30
+DUMMY close 0x30
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.48 = 0x31
+DUMMY close 0x31
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.49 = 0x32
+DUMMY close 0x32
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.50 = 0x33
+DUMMY close 0x33
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.51 = 0x34
+DUMMY close 0x34
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.52 = 0x35
+DUMMY close 0x35
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.53 = 0x36
+DUMMY close 0x36
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.54 = 0x37
+DUMMY close 0x37
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.55 = 0x38
+DUMMY close 0x38
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.56 = 0x39
+DUMMY close 0x39
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.57 = 0x3a
+DUMMY close 0x3a
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.58 = 0x3b
+DUMMY close 0x3b
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.59 = 0x3c
+DUMMY close 0x3c
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.60 = 0x3d
+DUMMY close 0x3d
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.61 = 0x3e
+DUMMY close 0x3e
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.62 = 0x3f
+DUMMY close 0x3f
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.63 = 0x40
+DUMMY close 0x40
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.64 = 0x41
+DUMMY close 0x41
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.65 = 0x42
+DUMMY close 0x42
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.66 = 0x43
+DUMMY close 0x43
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.67 = 0x44
+DUMMY close 0x44
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.68 = 0x45
+DUMMY close 0x45
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.69 = 0x46
+DUMMY close 0x46
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.70 = 0x47
+DUMMY close 0x47
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.71 = 0x48
+DUMMY close 0x48
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.72 = 0x49
+DUMMY close 0x49
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.73 = 0x4a
+DUMMY close 0x4a
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.74 = 0x4b
+DUMMY close 0x4b
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.75 = 0x4c
+DUMMY close 0x4c
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.76 = 0x4d
+DUMMY close 0x4d
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.77 = 0x4e
+DUMMY close 0x4e
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.78 = 0x4f
+DUMMY close 0x4f
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.79 = 0x50
+DUMMY close 0x50
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.80 = 0x51
+DUMMY close 0x51
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.81 = 0x52
+DUMMY close 0x52
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.82 = 0x53
+DUMMY close 0x53
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.83 = 0x54
+DUMMY close 0x54
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.84 = 0x55
+DUMMY close 0x55
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.85 = 0x56
+DUMMY close 0x56
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.86 = 0x57
+DUMMY close 0x57
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.87 = 0x58
+DUMMY close 0x58
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.88 = 0x59
+DUMMY close 0x59
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.89 = 0x5a
+DUMMY close 0x5a
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.90 = 0x5b
+DUMMY close 0x5b
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.91 = 0x5c
+DUMMY close 0x5c
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.92 = 0x5d
+DUMMY close 0x5d
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.93 = 0x5e
+DUMMY close 0x5e
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.94 = 0x5f
+DUMMY close 0x5f
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.95 = 0x60
+DUMMY close 0x60
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.96 = 0x61
+DUMMY close 0x61
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.97 = 0x62
+DUMMY close 0x62
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.98 = 0x63
+DUMMY close 0x63
+DUMMY create: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.99 = 0x64
+DUMMY close 0x64
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.54
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.9
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.35
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.10
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.58
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.16
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.50
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.14
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.64
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.33
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.80
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.78
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.25
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.84
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.40
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.27
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.96
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.1
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.17
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.11
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.61
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.53
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.21
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.85
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.30
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.88
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.74
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.77
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.3
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.89
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.94
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.99
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.12
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.57
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.63
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.97
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.75
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.55
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.0
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.90
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.82
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.92
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.52
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.37
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.19
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.7
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.13
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.6
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.51
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.69
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.95
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.36
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.93
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.71
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.20
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.86
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.72
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.45
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.8
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.73
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.2
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.47
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.26
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.24
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.39
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.23
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.65
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.46
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.44
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.81
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.56
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.60
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.67
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.70
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.42
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.83
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.29
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.31
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.41
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.4
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.62
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.43
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.28
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.22
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.18
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.49
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.91
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.76
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.66
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.32
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.48
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.59
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.15
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.5
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.38
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.98
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.68
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.34
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.87
+DUMMY stat: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.79
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.54 = 0x65
+DUMMY close 0x65
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.9 = 0x66
+DUMMY close 0x66
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.35 = 0x67
+DUMMY close 0x67
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.10 = 0x68
+DUMMY close 0x68
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.58 = 0x69
+DUMMY close 0x69
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.16 = 0x6a
+DUMMY close 0x6a
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.50 = 0x6b
+DUMMY close 0x6b
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.14 = 0x6c
+DUMMY close 0x6c
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.64 = 0x6d
+DUMMY close 0x6d
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.33 = 0x6e
+DUMMY close 0x6e
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.80 = 0x6f
+DUMMY close 0x6f
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.78 = 0x70
+DUMMY close 0x70
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.25 = 0x71
+DUMMY close 0x71
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.84 = 0x72
+DUMMY close 0x72
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.40 = 0x73
+DUMMY close 0x73
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.27 = 0x74
+DUMMY close 0x74
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.96 = 0x75
+DUMMY close 0x75
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.1 = 0x76
+DUMMY close 0x76
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.17 = 0x77
+DUMMY close 0x77
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.11 = 0x78
+DUMMY close 0x78
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.61 = 0x79
+DUMMY close 0x79
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.53 = 0x7a
+DUMMY close 0x7a
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.21 = 0x7b
+DUMMY close 0x7b
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.85 = 0x7c
+DUMMY close 0x7c
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.30 = 0x7d
+DUMMY close 0x7d
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.88 = 0x7e
+DUMMY close 0x7e
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.74 = 0x7f
+DUMMY close 0x7f
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.77 = 0x80
+DUMMY close 0x80
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.3 = 0x81
+DUMMY close 0x81
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.89 = 0x82
+DUMMY close 0x82
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.94 = 0x83
+DUMMY close 0x83
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.99 = 0x84
+DUMMY close 0x84
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.12 = 0x85
+DUMMY close 0x85
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.57 = 0x86
+DUMMY close 0x86
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.63 = 0x87
+DUMMY close 0x87
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.97 = 0x88
+DUMMY close 0x88
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.75 = 0x89
+DUMMY close 0x89
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.55 = 0x8a
+DUMMY close 0x8a
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.0 = 0x8b
+DUMMY close 0x8b
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.90 = 0x8c
+DUMMY close 0x8c
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.82 = 0x8d
+DUMMY close 0x8d
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.92 = 0x8e
+DUMMY close 0x8e
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.52 = 0x8f
+DUMMY close 0x8f
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.37 = 0x90
+DUMMY close 0x90
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.19 = 0x91
+DUMMY close 0x91
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.7 = 0x92
+DUMMY close 0x92
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.13 = 0x93
+DUMMY close 0x93
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.6 = 0x94
+DUMMY close 0x94
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.51 = 0x95
+DUMMY close 0x95
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.69 = 0x96
+DUMMY close 0x96
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.95 = 0x97
+DUMMY close 0x97
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.36 = 0x98
+DUMMY close 0x98
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.93 = 0x99
+DUMMY close 0x99
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.71 = 0x9a
+DUMMY close 0x9a
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.20 = 0x9b
+DUMMY close 0x9b
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.86 = 0x9c
+DUMMY close 0x9c
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.72 = 0x9d
+DUMMY close 0x9d
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.45 = 0x9e
+DUMMY close 0x9e
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.8 = 0x9f
+DUMMY close 0x9f
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.73 = 0xa0
+DUMMY close 0xa0
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.2 = 0xa1
+DUMMY close 0xa1
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.47 = 0xa2
+DUMMY close 0xa2
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.26 = 0xa3
+DUMMY close 0xa3
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.24 = 0xa4
+DUMMY close 0xa4
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.39 = 0xa5
+DUMMY close 0xa5
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.23 = 0xa6
+DUMMY close 0xa6
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.65 = 0xa7
+DUMMY close 0xa7
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.46 = 0xa8
+DUMMY close 0xa8
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.44 = 0xa9
+DUMMY close 0xa9
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.81 = 0xaa
+DUMMY close 0xaa
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.56 = 0xab
+DUMMY close 0xab
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.60 = 0xac
+DUMMY close 0xac
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.67 = 0xad
+DUMMY close 0xad
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.70 = 0xae
+DUMMY close 0xae
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.42 = 0xaf
+DUMMY close 0xaf
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.83 = 0xb0
+DUMMY close 0xb0
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.29 = 0xb1
+DUMMY close 0xb1
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.31 = 0xb2
+DUMMY close 0xb2
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.41 = 0xb3
+DUMMY close 0xb3
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.4 = 0xb4
+DUMMY close 0xb4
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.62 = 0xb5
+DUMMY close 0xb5
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.43 = 0xb6
+DUMMY close 0xb6
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.28 = 0xb7
+DUMMY close 0xb7
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.22 = 0xb8
+DUMMY close 0xb8
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.18 = 0xb9
+DUMMY close 0xb9
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.49 = 0xba
+DUMMY close 0xba
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.91 = 0xbb
+DUMMY close 0xbb
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.76 = 0xbc
+DUMMY close 0xbc
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.66 = 0xbd
+DUMMY close 0xbd
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.32 = 0xbe
+DUMMY close 0xbe
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.48 = 0xbf
+DUMMY close 0xbf
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.59 = 0xc0
+DUMMY close 0xc0
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.15 = 0xc1
+DUMMY close 0xc1
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.5 = 0xc2
+DUMMY close 0xc2
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.38 = 0xc3
+DUMMY close 0xc3
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.98 = 0xc4
+DUMMY close 0xc4
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.68 = 0xc5
+DUMMY close 0xc5
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.34 = 0xc6
+DUMMY close 0xc6
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.87 = 0xc7
+DUMMY close 0xc7
+DUMMY open: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.79 = 0xc8
+DUMMY close 0xc8
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.0
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.1
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.2
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.3
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.4
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.5
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.6
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.7
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.8
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.9
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.10
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.11
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.12
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.13
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.14
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.15
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.16
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.17
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.18
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.19
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.20
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.21
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.22
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.23
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.24
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.25
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.26
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.27
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.28
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.29
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.30
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.31
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.32
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.33
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.34
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.35
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.36
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.37
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.38
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.39
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.40
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.41
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.42
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.43
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.44
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.45
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.46
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.47
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.48
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.49
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.50
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.51
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.52
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.53
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.54
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.55
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.56
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.57
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.58
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.59
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.60
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.61
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.62
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.63
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.64
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.65
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.66
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.67
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.68
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.69
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.70
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.71
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.72
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.73
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.74
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.75
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.76
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.77
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.78
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.79
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.80
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.81
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.82
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.83
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.84
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.85
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.86
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.87
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.88
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.89
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.90
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.91
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.92
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.93
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.94
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.95
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.96
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.97
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.98
+DUMMY delete: ./out/test-dir.0-0/mdtest_tree.0/file.mdtest.0.99
+DUMMY rmdir: ./out/test-dir.0-0/mdtest_tree.0/
+DUMMY access: ./out/test-dir.0-0
+DUMMY rmdir: ./out/test-dir.0-0
+WARNING: DUMMY finalized, (aiori-DUMMY.c:208).

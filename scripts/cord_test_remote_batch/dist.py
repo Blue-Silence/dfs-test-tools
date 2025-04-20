@@ -18,6 +18,7 @@ def dist_remote(conf):
         cmd = f'ssh {dst} "rm -rf {target_dir}; mkdir {target_dir}"'
         for (file_p, file_n) in conf.LOCAL_FILES:
             cmd += f' && scp {file_p} {dst}:{target_dir}/{file_n}'
+        # print(f'Exec: {cmd}')
         os.system(cmd)
 
 def clean_up(conf):
