@@ -11,17 +11,17 @@ from config import conf
 
 
 if __name__ == '__main__': 
-    for i in range(4,5): 
-        conf_t = copy.deepcopy(conf)
-        conf_t.TEST_ID = i
-        conf_t.LOCAL_FILES.append(
-            (f'{conf.LOCAL_PROJ_PATH}/gen_trace_out/{i}.log', 'trace.log')
-        )
-        run_compile(conf_t)  
-        dist_remote(conf_t)
-        start_all()
-        remote_run(conf_t)
-        kill_all()
-        exit(1)
-        # clean_up(conf_t)
+    for i in range(0,10): 
+        for j in range(0,3):
+            conf_t = copy.deepcopy(conf)
+            conf_t.TEST_ID = i
+            conf_t.LOCAL_FILES.append(
+                (f'{conf.LOCAL_PROJ_PATH}/gen_trace_out/{i}.log', 'trace.log')
+            )
+            run_compile(conf_t)  
+            dist_remote(conf_t)
+            start_all()
+            remote_run(conf_t)
+            kill_all()
+            # clean_up(conf_t)
 
