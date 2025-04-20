@@ -24,5 +24,6 @@ def clean_up(conf):
     for idx, dst in enumerate(conf.REMOTE_NODES):
         target_dir = f'{conf.REMOTE_TEST_ROOT}'
         cmd = f'ssh {dst} "rm -rf {target_dir}/*"'
+        print(f'Cleaning up: {cmd}')
         os.system(cmd)
 

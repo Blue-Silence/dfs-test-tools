@@ -119,7 +119,7 @@ def remote_run(conf):
     elapsed_time = (end_time - start_time)  # 转换为微秒
     print(f"Test time: {elapsed_time:.2f}s")
 
-    with open(f"{conf.OUT_PREFIX}/{conf.TEST_NAME}.txt", "a") as file:
+    with open(f"{conf.OUT_PREFIX}/{conf.TEST_NAME}_{conf.TEST_ID}.txt", "a") as file:
         elapsed_time_us = (end_time - start_time) * 1_000_000  # 转换为微秒
         for t in threads:
             file.write(f"{t.elapsed_time_us:.2f} ")

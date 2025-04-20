@@ -2,4 +2,4 @@ trace_path = "./trace.log"
 thread = 4
 max_parallel = 60
 root_path = "/dev/shm/foo"
-iter_per_spawn = 2000
+iter_per_spawn = 2

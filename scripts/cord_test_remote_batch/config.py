@@ -10,7 +10,7 @@ conf = CONF()
 conf.LOCAL_PROJ_PATH = "/local/dfs-test-tools"
 conf.LOCAL_FILES = [
     (f'{conf.LOCAL_PROJ_PATH}/target/release/main', 'main'),
-    (f'{conf.LOCAL_PROJ_PATH}/conf/dir_contention_test.toml', 'conf.toml'),
+    (f'{conf.LOCAL_PROJ_PATH}/conf/trace_test.toml', 'conf.toml'),
     # (f'{conf.LOCAL_PROJ_PATH}/traces/1.log', 'trace.log'),
 ]
 
@@ -19,7 +19,7 @@ conf.REMOTE_ROOT_DIR = f'/dev/shm'
 
 ################## CLUSTER CONFIG #####################
 
-conf.REMOTE_NODES = ['amd197.utah.cloudlab.us', 'amd198.utah.cloudlab.us']
+conf.REMOTE_NODES = ['amd135.utah.cloudlab.us']
 conf.USERNAME = "Finch"
 
 
@@ -39,6 +39,6 @@ conf.TEST_CONF = 'conf.toml'
 
 conf.OUT_PREFIX = '/local/perf'
 
-conf.REMOTE_TEST_ROOT = './dev/shm/foo'
+conf.REMOTE_TEST_ROOT = '/dev/shm/foo'
 
 conf.PARALLELISM = 1
