@@ -19,7 +19,12 @@ fn main() {
 
     test.set_config(conf.clone(), unique_id, all_task_cnt);
 
-    test.init(ClientGen{});
+    #[cfg(feature = "infinifs_client")]
+    let c_gen = ClientGen::new(&"./global_config.toml", &"./client_config.toml");
+    #[cfg(feature = "native_client")]
+    let c_gen = ClientGen::new();
+
+    test.init(c_gen);
     flush_out("Ready");
 
     wait_input();

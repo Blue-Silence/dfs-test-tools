@@ -1,8 +1,5 @@
+#![allow(warnings)] 
 
-use std::fmt::Debug;
-
-use client::native_client;
-use tokio::fs::File;
 pub trait Test {
     fn name(&self) -> &'static str;
     fn set_config(&mut self, config: String, unique_id: usize, all_task_cnt: usize);
@@ -11,15 +8,16 @@ pub trait Test {
 }
 
 pub trait FSClient {
-    async fn create_dir(&mut self, path: &str) -> Result<(), String>; //io::Result<()>;
-    async fn change_permission(&mut self, path: &str, mode: u32) -> Result<(), String>;
-    async fn file_stat(&mut self, path: &str) -> Result<(), String>;
-    async fn dir_stat(&mut self, path: &str) -> Result<(), String>;
-    async fn file_create(&mut self, path: &str) -> Result<FD, String>; //io::Result<()>;
-    async fn try_exist(&mut self, path: &str) -> Result<bool, String>; //io::Result<()>;
+    async fn create_dir(&mut self, path: &String) -> Result<(), String>; //io::Result<()>;
+    async fn dir_change_permission(&mut self, path: &String, mode: u32) -> Result<(), String>;
+    async fn file_change_permission(&mut self, path: &String, mode: u32) -> Result<(), String>;
+    async fn file_stat(&mut self, path: &String) -> Result<(), String>;
+    async fn dir_stat(&mut self, path: &String) -> Result<(), String>;
+    async fn file_create(&mut self, path: &String) -> Result<FD, String>; //io::Result<()>;
+    async fn dir_try_exist(&mut self, path: &String) -> Result<bool, String>; //io::Result<()>;
     async fn close(&mut self, fd: FD) -> Result<(), String>; //io::Result<()>;
-    async fn open(&mut self, path: &str) -> Result<FD, String>; //io::Result<()>;
-    async fn delete(&mut self, path: &str) -> Result<(), String>; //io::Result<()>;
+    async fn open(&mut self, path: &String) -> Result<FD, String>; //io::Result<()>;
+    async fn delete(&mut self, path: &String) -> Result<(), String>; //io::Result<()>;
 }
 
 
@@ -28,6 +26,22 @@ pub mod client;
 pub mod trace;
 
 
+
+#[cfg(feature = "native_client")]
+use client::native_client;
+#[cfg(feature = "native_client")]
 pub type ClientGen = native_client::NativeClientFactory;
+#[cfg(feature = "native_client")]
 pub type Client = native_client::NativeClient;
-pub type FD = File;
+#[cfg(feature = "native_client")]
+pub type FD = tokio::fs::File;
+
+
+#[cfg(feature = "infinifs_client")]
+use client::infinifs_client;
+#[cfg(feature = "infinifs_client")]
+pub type ClientGen = infinifs_client::InfinifsClientFactory;
+#[cfg(feature = "infinifs_client")]
+pub type Client = infinifs_client::InfinifsClient;
+#[cfg(feature = "infinifs_client")]
+pub type FD = client::infinifs_client::FD;

@@ -10,4 +10,12 @@ tokio = {version = "1.43.0", features = ["fs", "time"]}
 serde = {version = "1.0.217", features = ["derive"]}
 toml = "0.8.14"
 async-scoped = { version = "0.9.0", features = ["use-tokio"]}
-rand = "0.8"
+rand = "0.9.1"
+mds = { git = "https://github.com/Blue-Silence/new_mds", branch = "cloudlab-test", optional = true}
+
+
+
+[features]
+default = ["native_client"]
+native_client = []
+infinifs_client = ["mds"]

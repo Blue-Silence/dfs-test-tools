@@ -19,7 +19,7 @@ impl TraceEngine {
         match e {
             TraceEvent::Create { path, address } => {
                 let path = modify_path_with_suffix_and_root(path.as_str(), tag, root_path);
-                let r = self.client.file_create(path.as_str());
+                let r = self.client.file_create(&path);
                 let fd = r.await.unwrap();
                 self.addr_info.insert(address, fd);
             }

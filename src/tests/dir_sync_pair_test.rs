@@ -1,8 +1,7 @@
 use serde::Deserialize;
 use std::io::{self, Write};
 
-use rand::rngs::StdRng;
-use rand::seq::SliceRandom;
+use rand::{rngs::StdRng, seq::IndexedRandom};
 use rand::SeedableRng;
 
 use crate::{Client, ClientGen, FSClient, Test};
@@ -112,7 +111,7 @@ impl DirSyncPairTest {
         }
 
         for dir_path in all_dir_ps[self.unique_id].as_slice() {
-            let re = self.clients[0].create_dir(dir_path.as_str());
+            let re = self.clients[0].create_dir(dir_path);
             if let Err(e) = re.await {
                 panic!("Error! mkdir {}, err:{:?}", dir_path, e);
             }
@@ -121,8 +120,8 @@ impl DirSyncPairTest {
         let all_file_ps = all_file_ps_gen(self.unique_id, &conf);
 
         for p1 in all_file_ps.clone() {
-            for file_path in p1 {
-                let re = self.clients[0].file_create(file_path.as_str());
+            for file_path in p1.iter() {
+                let re = self.clients[0].file_create(file_path);
                 if let Err(e) = re.await {
                     panic!("Error! file create {}, err:{:?}", file_path, e);
                 }
@@ -172,7 +171,7 @@ impl DirSyncPairTest {
                         if j % conf.set_permission_ratio == 1 {
                             let k = j / conf.set_permission_ratio;
                             let p = &dir_ps[i][k];
-                            let re = modify_permissions(client, k, p);
+                            let re = dir_modify_permissions(client, k, p);
                             if let Err(e) = re.await {
                                 println!("Error!:{:?}", e);
                                 io::stdout().flush().unwrap();
@@ -188,10 +187,20 @@ impl DirSyncPairTest {
     }
 }
 
-async fn modify_permissions(client: &mut Client, i: usize, path: &str) -> Result<(), String> {
+async fn dir_modify_permissions(client: &mut Client, i: usize, path: &String) -> Result<(), String> {
     if i % 2 == 0 {
-        return client.change_permission(path, 0o555).await;
+        return client.dir_change_permission(path, 0o555).await;
     } else {
-        return client.change_permission(path, 0o755).await;
+        return client.dir_change_permission(path, 0o755).await;
     }
 }
+
+/* 
+async fn file_modify_permissions(client: &mut Client, i: usize, path: &String) -> Result<(), String> {
+    if i % 2 == 0 {
+        return client.file_change_permission(path, 0o555).await;
+    } else {
+        return client.file_change_permission(path, 0o755).await;
+    }
+}
+*/
