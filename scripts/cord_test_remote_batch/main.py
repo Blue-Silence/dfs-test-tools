@@ -9,13 +9,12 @@ from config import conf
 
 
 
-
 if __name__ == '__main__': 
     for i in range(0,1): 
         conf_t = copy.deepcopy(conf)
         conf_t.TEST_ID = i
         conf_t.LOCAL_FILES.append(
-            (f'{conf.LOCAL_PROJ_PATH}/traces/1.log', 'trace.log')
+            (f'{conf.LOCAL_PROJ_PATH}/gen_trace_out/{i}.log', 'trace.log')
         )
         run_compile(conf_t)    
         dist_remote(conf_t)

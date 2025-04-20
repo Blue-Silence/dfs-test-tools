@@ -71,8 +71,11 @@ fn split_path(path: &str) -> (String, String) {
 }
 */
 
-fn modify_path_with_suffix_and_root(path: &str, suffix: &str, root_path: &str) -> String {
+fn modify_path_with_suffix_and_root(mut path: &str, suffix: &str, root_path: &str) -> String {
     //println!("Suffix:{}", suffix);
+    if path.chars().last().unwrap() == '/' {
+        path = &path[0..path.len()-1]
+    }
     let mut re = path
         .split('/')
         .map(|segment| format!("{}{}", segment, suffix))

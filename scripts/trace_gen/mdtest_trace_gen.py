@@ -8,12 +8,16 @@ cmds = [
 
 for i in [100, 500, 1000, 10000, 100000]:
     for n in [1, 2, 4, 8, 16, 32, 64]: 
-        cmds.append(f"./mdtest '-a=DUMMY' '-CTEr' '-R' '-n' '{i * n}' '-vvvvv' -I {i}")
+        cmds.append((f"./mdtest '-a=DUMMY' '-CTEr' '-R' '-n' '{i * n}' '-vvvvv' -I {i}", n))
 
 
 
 if __name__ == '__main__':  
-    for i, c in enumerate(cmds):
-        cmd = f'echo //// {c} >> {TRACE_DIR}/{i}.log && {c} | grep DUMMY >> {TRACE_DIR}/{i}.log'
+    for i, (c, dir_cnt) in enumerate(cmds):
+        cmd = f'echo //// {c} >> {TRACE_DIR}/{i}.log'
+        cmd += f' && echo DUMMY mkdir: ./out >> {TRACE_DIR}/{i}.log'
+        for j in range(0, dir_cnt):
+            cmd += f' && echo DUMMY mkdir: ./out/test-dir.0-{j} >> {TRACE_DIR}/{i}.log'
+        cmd += f' && {c} | grep DUMMY >> {TRACE_DIR}/{i}.log'
         print(cmd)
         os.system(cmd)
