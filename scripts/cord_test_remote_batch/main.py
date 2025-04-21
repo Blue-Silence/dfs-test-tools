@@ -16,7 +16,7 @@ if __name__ == '__main__':
         for j in range(0,3):
             print(f'Test {i}-{j} start')
             conf_t = copy.deepcopy(conf)
-            conf_t.TEST_ID = 0
+            conf_t.TEST_ID = i
             conf_t.LOCAL_FILES.append(
                 (f'{conf.LOCAL_PROJ_PATH}/conf/dir_contention_test_ser/dir_contention_test_{i}.toml', 'conf.toml')
             )
