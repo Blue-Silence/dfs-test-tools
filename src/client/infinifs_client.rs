@@ -1,4 +1,3 @@
-
 use mds::const_def::ROOT_PERMISSION;
 use mds::server::db::type_def::{IdT, NameT};
 use mds::{client::Client, config};
@@ -22,7 +21,10 @@ impl InfinifsClientFactory {
             .expect("Should have been able to read the file");
         let client_config = std::fs::read_to_string(client_config_path)
             .expect("Should have been able to read the file");
-        InfinifsClientFactory { global_config, client_config}
+        InfinifsClientFactory {
+            global_config,
+            client_config,
+        }
     }
 
     pub fn new_client(&mut self) -> InfinifsClient {
@@ -38,10 +40,10 @@ impl FSClient for InfinifsClient {
     async fn create_dir(&mut self, path: &String) -> Result<(), String> {
         loop {
             let re = self.cli.mkdir(path, ROOT_PERMISSION()).await;
-            match re {
-                Err(mds::client::user_error::UserError::RemoteError(mds::error::Error::MDSError(mds::error::MDSError::Locked(_)))) => tokio::time::sleep(tokio::time::Duration::from_micros(1000)).await,
-                _ => return to_re(re),
+            if !test_lock(&re) {
+                return to_re(re);
             }
+            tokio::time::sleep(tokio::time::Duration::from_micros(1000)).await;
         }
     }
 
@@ -68,8 +70,13 @@ impl FSClient for InfinifsClient {
     }
 
     async fn file_stat(&mut self, path: &String) -> Result<(), String> {
-        let re = self.cli.file_stat(path).await;
-        to_re(re)
+        loop {
+            let re = self.cli.file_stat(path).await;
+            if !test_lock(&re) {
+                return to_re(re);
+            }
+            tokio::time::sleep(tokio::time::Duration::from_micros(1000)).await;
+        }
     }
 
     async fn dir_stat(&mut self, path: &String) -> Result<(), String> {
@@ -137,4 +144,13 @@ fn split_path(inp: &String) -> (String, &str) {
     let it: Vec<_> = inp.split('/').collect();
     let par_p = &it[0..it.len() - 1];
     (par_p.join("/"), it[it.len() - 1])
+}
+
+fn test_lock<T>(re: &Result<T, mds::client::user_error::UserError>) -> bool {
+    match re {
+        Err(mds::client::user_error::UserError::RemoteError(mds::error::Error::MDSError(
+            mds::error::MDSError::Locked(_),
+        ))) => true,
+        _ => false,
+    }
 }

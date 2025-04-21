@@ -60,6 +60,11 @@ impl TraceEvent {
             Some(Ok(TraceEvent::DirStat {
                 path: path_and_filename.to_string(),
             }))
+        } else if s.starts_with("DUMMY stat") {
+            let path_and_filename = s.split("stat: ").nth(1).unwrap().trim();
+            Some(Ok(TraceEvent::FileStat {
+                path: path_and_filename.to_string(),
+            }))
         } /* else if s.starts_with("WARNING") {
             None
         } else if s.starts_with("////") {
