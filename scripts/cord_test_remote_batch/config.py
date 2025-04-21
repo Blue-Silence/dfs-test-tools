@@ -10,7 +10,7 @@ conf = CONF()
 conf.LOCAL_PROJ_PATH = "/local/dfs-test-tools"
 conf.LOCAL_FILES = [
     (f'{conf.LOCAL_PROJ_PATH}/target/release/main', 'main'),
-    (f'{conf.LOCAL_PROJ_PATH}/conf/dir_contention_test.toml', 'conf.toml'),
+    # (f'{conf.LOCAL_PROJ_PATH}/conf/dir_contention_test.toml', 'conf.toml'),
     (f'{conf.LOCAL_PROJ_PATH}/scripts/cord_test_remote_batch/config/client.toml', 'client_config.toml'),
     (f'{conf.LOCAL_PROJ_PATH}/scripts/cord_test_remote_batch/config/global.toml', 'global_config.toml'),
     # (f'{conf.LOCAL_PROJ_PATH}/traces/1.log', 'trace.log'),

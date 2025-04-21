@@ -2,6 +2,7 @@ import os
 import shutil
 import tempfile
 import copy
+import time
 from dist import run_compile, dist_remote, clean_up
 from remote_run import remote_run
 from server_setup import start_all, kill_all
@@ -25,4 +26,5 @@ if __name__ == '__main__':
             remote_run(conf_t)
             kill_all()
             # clean_up(conf_t)
+            time.sleep(3)
 
