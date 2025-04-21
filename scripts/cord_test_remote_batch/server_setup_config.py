@@ -9,7 +9,7 @@ SERVER_NODES = ['Finch@amd124.utah.cloudlab.us', 'Finch@amd113.utah.cloudlab.us'
 RENAMER_NODES = ['Finch@amd124.utah.cloudlab.us',]
 ALL_NODES = SERVER_NODES + RENAMER_NODES
 CONFIG_DIR_PATH = f'/local/dfs-test-tools/scripts/cord_test_remote_batch/config'
-ROOT_DIR = f'/dev/shm'
+ROOT_DIR = f'/local/fake_shm'
 
 ################## BUILD CONFIG #####################
 

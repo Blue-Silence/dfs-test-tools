@@ -51,7 +51,7 @@ impl FSClient for InfinifsClient {
     }
 
     async fn file_change_permission(&mut self, path: &String, mode: u32) -> Result<(), String> {
-        let re1 = self.cli.unique_open(path).await;
+        let re1 = self.cli.shared_open(path).await;
         let (pid, val) = match re1 {
             Ok(v) => v,
             Err(e) => return Err(format!("{:?}", e)),

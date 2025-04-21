@@ -11,12 +11,13 @@ from config import conf
 
 
 if __name__ == '__main__': 
-    for i in range(0,10): 
+    for i in range(0,7): 
         for j in range(0,3):
+            print(f'Test {i}-{j} start')
             conf_t = copy.deepcopy(conf)
-            conf_t.TEST_ID = i
+            conf_t.TEST_ID = 0
             conf_t.LOCAL_FILES.append(
-                (f'{conf.LOCAL_PROJ_PATH}/gen_trace_out/{i}.log', 'trace.log')
+                (f'{conf.LOCAL_PROJ_PATH}/conf/dir_contention_test_ser/dir_contention_test_{i}.toml', 'conf.toml')
             )
             run_compile(conf_t)  
             dist_remote(conf_t)
