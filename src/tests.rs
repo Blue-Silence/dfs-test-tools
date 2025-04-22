@@ -1,5 +1,6 @@
 mod dir_contention_test;
 mod dir_contention_test_2;
+mod dir_contention_test_distribution;
 mod dir_sync_test;
 mod dir_sync_pair_test;
 mod trace_test;
@@ -10,6 +11,7 @@ pub fn get_tests(name: &str) -> Option<Box<dyn Test>> {//HashMap<String, Box<dyn
     match name {
         "DirContentionTest" => Some(Box::new(dir_contention_test::DirContentionTest::new())),
         "DirContentionTest2" => Some(Box::new(dir_contention_test_2::DirContentionTest::new())),
+        "DirContentionTestDistribution" => Some(Box::new(dir_contention_test_distribution::DirContentionTest::new())),
         //"DirContentionMultiCliTest" => Some(Box::new(dir_contention_multi_cli_test::DirContentionMultiCliTest::new())),
         //"DirSyncTest" => Some(Box::new(dir_sync_test::DirSyncTest::new())),
         "DirSyncTest" => Some(Box::new(dir_sync_test::DirSyncTest::new())),
