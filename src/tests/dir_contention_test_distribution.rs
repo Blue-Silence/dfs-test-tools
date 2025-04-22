@@ -162,7 +162,7 @@ impl DirContentionTest {
 
             for _ in 0..conf.op_per_spawn {
                 self.file_ps[i].push(
-                    all_file_ps.choose(&mut rng).unwrap()[rng.sample(dist) as usize]
+                    all_file_ps.choose(&mut rng).unwrap()[(rng.sample(dist) as usize) % conf.dir_cnt]
                         .choose(&mut rng)
                         .unwrap()
                         .clone(),
