@@ -15,7 +15,7 @@ struct TestConfig {
     pub dir_cnt: usize,
     pub dir_size: usize,
     //pub distribution_type: String,
-    pub zipf_s: usize,
+    pub zipf_s: f64,
     pub op_per_spawn: usize,
 }
 
@@ -153,7 +153,7 @@ impl DirContentionTest {
         use rand::prelude::*;
         use rand_distr::Zipf;
 
-        let dist = Zipf::new(conf.dir_cnt as f64, conf.zipf_s as f64).unwrap();
+        let dist = Zipf::new(conf.dir_cnt as f64, conf.zipf_s).unwrap();
         let mut rng = rand::rng();
 
         let mut rng = StdRng::seed_from_u64(self.unique_id as u64);

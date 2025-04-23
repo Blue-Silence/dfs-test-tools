@@ -25,7 +25,7 @@ class RemoteProgramThread(threading.Thread):
 
 
         ssh_stdin, ssh_stdout, ssh_stderr = ssh_client.exec_command(self.command)
-        # print(f"Exec: {self.command}")
+        print(f"Exec: {self.command}")
 
         # 检查输出，直到输出包含指定的阻塞点标志1
         output = ''
@@ -43,7 +43,7 @@ class RemoteProgramThread(threading.Thread):
                 print(f"{self.blocking_output_1} not in {output}")
                 # print(ssh_stdout.read().decode())
                 # print(ssh_stderr.read().decode())
-                # exit(1)
+                exit(1)
 
         # 到达阻塞点后，等待其他程序一起同步
         #print('Barrier 1 reached')

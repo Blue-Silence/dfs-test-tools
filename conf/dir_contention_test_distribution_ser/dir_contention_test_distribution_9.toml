@@ -4,6 +4,6 @@ max_parallel = 60
 root_path = "/mnt/beegfs/foo"
 dir_cnt = 200
 dir_size = 1000
-zipf_s = 0.2
+zipf_s = 16
 op_per_spawn = 2000
 
