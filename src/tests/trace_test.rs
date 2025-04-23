@@ -24,6 +24,7 @@ pub struct TraceTest {
     conf: Option<TestConfig>,
     unique_id: usize,
     all_task_cnt: usize,
+    dir_out: String,
 
     //Then starts the unique part for the test.
     engines: Vec<Arc<Mutex<TraceEngine>>>,
@@ -38,6 +39,7 @@ impl TraceTest {
             all_task_cnt: 0,
             engines: vec![],
             events: vec![],
+            dir_out: "".to_string(),
         }
     }
 }
@@ -47,10 +49,11 @@ impl Test for TraceTest {
         "Dir Contention Test"
     }
 
-    fn set_config(&mut self, config: String, unique_id: usize, all_task_cnt: usize) {
+    fn set_config(&mut self, config: String, unique_id: usize, all_task_cnt: usize, dir_out: String) {
         self.conf = Some(toml::from_str(&config).unwrap());
         self.unique_id = unique_id;
         self.all_task_cnt = all_task_cnt;
+        self.dir_out = dir_out;
     }
 
     //#[tokio::main]

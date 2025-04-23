@@ -98,7 +98,7 @@ def remote_run(conf):
     for idx, host in enumerate(conf.REMOTE_NODES):
         remote_dir = f"{conf.REMOTE_ROOT_DIR}/TEST_NODE_{idx}"
         for _ in range(0, conf.PARALLELISM):
-            thread = RemoteProgramThread(f"cd {remote_dir} && {remote_dir}/{conf.TEST_PROGRAM} {conf.TEST_NAME} {remote_dir}/{conf.TEST_CONF} {tag} {total_parallel}", input_s, blocking_output_1, barrier_1, blocking_output_2, barrier_2, host, conf.USERNAME)
+            thread = RemoteProgramThread(f"cd {remote_dir} && {remote_dir}/{conf.TEST_PROGRAM} {conf.TEST_NAME} {remote_dir}/{conf.TEST_CONF} {tag} {total_parallel} {remote_dir}/OUT", input_s, blocking_output_1, barrier_1, blocking_output_2, barrier_2, host, conf.USERNAME)
             threads.append(thread)
             thread.start()
             print(f"\t\tInit {tag} on node {host} start")

@@ -1,9 +1,0 @@
-thread = 4
-max_parallel = 60
-# root_path = "/mnt/beegfs"
-root_path = "/mnt/cephfs/foo"
-dir_cnt = 20
-dir_size = 10000
-zipf_s = 10
-op_per_spawn = 2000
-

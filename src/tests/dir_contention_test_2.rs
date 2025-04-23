@@ -22,6 +22,7 @@ pub struct DirContentionTest {
     conf: Option<TestConfig>,
     unique_id: usize,
     all_task_cnt: usize,
+    dir_out: String,
 
     //Then starts the unique part for the test.
     clients: Vec<Client>,
@@ -36,6 +37,7 @@ impl DirContentionTest {
             all_task_cnt: 0,
             clients: vec![],
             file_ps: vec![],
+            dir_out: "".to_string(),
         }
     }
 }
@@ -45,10 +47,11 @@ impl Test for DirContentionTest {
         "Dir Contention Test"
     }
 
-    fn set_config(&mut self, config: String, unique_id: usize, all_task_cnt: usize) {
+    fn set_config(&mut self, config: String, unique_id: usize, all_task_cnt: usize, dir_out: String) {
         self.conf = Some(toml::from_str(&config).unwrap());
         self.unique_id = unique_id;
         self.all_task_cnt = all_task_cnt;
+        self.dir_out = dir_out;
     }
 
     //#[tokio::main]
