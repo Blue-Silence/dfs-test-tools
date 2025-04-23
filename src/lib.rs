@@ -24,6 +24,7 @@ pub trait FSClient {
 pub mod tests;
 pub mod client;
 pub mod trace;
+pub mod test_log;
 
 
 

@@ -1,9 +1,13 @@
 use serde::Deserialize;
+use std::fs::File;
 use std::io::{self, Write};
+use std::iter::zip;
+use std::time::SystemTime;
 
 use rand::SeedableRng;
 use rand::{rngs::StdRng, seq::IndexedRandom};
 
+use crate::test_log::TestLog;
 use crate::{Client, ClientGen, FSClient, Test};
 
 #[derive(Deserialize, Debug, Clone)]
@@ -27,6 +31,7 @@ pub struct DirContentionTest {
 
     //Then starts the unique part for the test.
     clients: Vec<Client>,
+    logs: Vec<TestLog>,
     file_ps: Vec<Vec<String>>,
 }
 
@@ -39,6 +44,7 @@ impl DirContentionTest {
             clients: vec![],
             file_ps: vec![],
             dir_out: "".to_string(),
+            logs: vec![],
         }
     }
 }
@@ -120,6 +126,7 @@ impl DirContentionTest {
 
         for _ in 0..conf.max_parallel {
             self.clients.push(c_gen.new_client());
+            self.logs.push(TestLog::new(conf.op_per_spawn));
         }
 
         let duty_dir = my_dir_init_duty(self.all_task_cnt, self.unique_id, &conf);
@@ -178,23 +185,40 @@ impl DirContentionTest {
     async fn run_help(&mut self) -> bool {
         let conf = self.conf.clone().unwrap();
 
+        let mut z = zip(self.clients.iter_mut(), self.logs.iter_mut());
         async_scoped::TokioScope::scope_and_block(|s| {
-            for (i, client) in self.clients.iter_mut().enumerate() {
+            for (i, (client, log)) in z.enumerate() {
                 let file_ps = &self.file_ps[i];
                 //let mut topo = topo.clone();
                 s.spawn(async move {
                     for j in 0..conf.op_per_spawn {
                         //let re = fs::metadata(&file_ps[j]);
+                        let t1 = SystemTime::now();
                         let re = file_modify_permissions(client, j, &file_ps[j]);
                         if let Err(e) = re.await {
                             println!("Error!:{:?}", e);
                             io::stdout().flush().unwrap();
                             panic!("Error! id:{}, err:{:?}", i, e);
                         }
+                        let t2 = SystemTime::now();
+                        log.push("1", t2.duration_since(t1).unwrap().as_micros() as usize);
+
                     }
                 });
             }
         });
+
+        let mut out_f = File::create(format!("{}/{}.log", self.dir_out, self.unique_id)).unwrap();
+
+        for log in self.logs.iter_mut() {
+            loop {
+                let s = log.pop();
+                if let None = s {
+                    break;
+                }
+                write!(out_f, "{}\n", s.unwrap()).unwrap();
+            }
+        }
 
         return true;
     }

@@ -21,7 +21,7 @@ conf.REMOTE_ROOT_DIR = f'/dev/shm'
 
 ################## CLUSTER CONFIG #####################
 
-conf.REMOTE_NODES = ['10.10.1.13', '10.10.1.14', '10.10.1.15']
+conf.REMOTE_NODES = ['10.10.1.11', '10.10.1.12', '10.10.1.13', '10.10.1.14', '10.10.1.15']
 conf.USERNAME = "Finch"
 
 

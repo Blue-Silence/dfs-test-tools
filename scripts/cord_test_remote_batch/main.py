@@ -15,7 +15,7 @@ from config import conf
 
 
 if __name__ == '__main__': 
-    for i in range(0,10): 
+    for i in range(0,15): 
         for j in range(0,3):
             test_id = f'{i}-{j}'
             print(f'Test {test_id} start')
@@ -23,7 +23,7 @@ if __name__ == '__main__':
             conf_t.TEST_ID = i
             conf_t.LOCAL_FILES.append(
                 # (f'{conf.LOCAL_PROJ_PATH}/conf/dir_contention_test_ser/dir_contention_test_{i}.toml', 'conf.toml')
-                (f'{conf.LOCAL_PROJ_PATH}/conf/dir_contention_test_distribution_ser/dir_contention_test_distribution_{i}.toml', 'conf.toml')
+                (f'{conf.LOCAL_PROJ_PATH}/conf/dir_contention_test_distribution_ser/{i}.toml', 'conf.toml')
             )
             clean_up(conf_t)
             run_compile(conf_t)  
