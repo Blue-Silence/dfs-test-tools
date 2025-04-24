@@ -1,9 +1,10 @@
 
     thread = 4
-    max_parallel = 3
-    root_path = "/mnt/beegfs/foo"
+    max_parallel = 10
+    root_path = ""
     dir_cnt = 200
     dir_size = 1000
     zipf_s = 0.1
     op_per_spawn = 6000
+    distribution_type = "zipf"
                 

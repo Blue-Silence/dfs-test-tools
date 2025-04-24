@@ -2,7 +2,7 @@
 
 pub trait Test {
     fn name(&self) -> &'static str;
-    fn set_config(&mut self, config: String, unique_id: usize, all_task_cnt: usize, out_dir: String);
+    fn set_config(&mut self, config: String, unique_id: usize, all_task_cnt: usize, out_dir: String, reuse_init: bool);
     fn init(&mut self, c_gen: ClientGen) -> bool;
     fn run(&mut self) -> bool;
 }

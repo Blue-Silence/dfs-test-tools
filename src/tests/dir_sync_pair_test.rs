@@ -24,6 +24,7 @@ pub struct DirSyncPairTest {
     unique_id: usize,
     all_task_cnt: usize,
     dir_out: String,
+    reuse_init: bool,
 
     //Then starts the unique part for the test.
     clients: Vec<Client>,
@@ -41,6 +42,7 @@ impl DirSyncPairTest {
             file_ps: vec![],
             dir_ps: vec![],
             dir_out: "".to_string(),
+            reuse_init: false,
         }
     }
 }
@@ -50,11 +52,12 @@ impl Test for DirSyncPairTest {
         "Dir Contention Test"
     }
 
-    fn set_config(&mut self, config: String, unique_id: usize, all_task_cnt: usize, dir_out: String) {
+    fn set_config(&mut self, config: String, unique_id: usize, all_task_cnt: usize, dir_out: String, reuse_init: bool) {
         self.conf = Some(toml::from_str(&config).unwrap());
         self.unique_id = unique_id;
         self.all_task_cnt = all_task_cnt;
         self.dir_out = dir_out;
+        self.reuse_init = reuse_init;
     }
 
     //#[tokio::main]
@@ -114,6 +117,9 @@ impl DirSyncPairTest {
         }
 
         for dir_path in all_dir_ps[self.unique_id].as_slice() {
+            if self.reuse_init {
+                break;
+            }
             let re = self.clients[0].create_dir(dir_path);
             if let Err(e) = re.await {
                 panic!("Error! mkdir {}, err:{:?}", dir_path, e);
@@ -123,6 +129,9 @@ impl DirSyncPairTest {
         let all_file_ps = all_file_ps_gen(self.unique_id, &conf);
 
         for p1 in all_file_ps.clone() {
+            if self.reuse_init {
+                break;
+            }
             for file_path in p1.iter() {
                 let re = self.clients[0].file_create(file_path);
                 if let Err(e) = re.await {

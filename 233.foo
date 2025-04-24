@@ -1,0 +1,91 @@
+Test 4-0 start
+cd /local/dfs-test-tools && cargo build --release --features "infinifs_client "
+cd /local/new_mds && cargo build --release 
+KILLED PROCESSES
+RUNNING SERVER0
+RUNNING SERVER1
+RUNNING SERVER2
+RUNNING SERVER3
+RUNNING SERVER4
+RUNNING SERVER5
+RUNNING SERVER6
+RUNNING SERVER7
+RUNNING SERVER8
+RUNNING SERVER9
+Server is running
+RUNNING RENAMER0
+Cleaning up...
+Traceback (most recent call last):
+  File "/users/Finch/.local/lib/python3.12/site-packages/pyrem/task.py", line 42, in cleanup
+    task.stop()
+  File "<decorator-gen-4>", line 2, in stop
+  File "/users/Finch/.local/lib/python3.12/site-packages/pyrem/utils.py", line 19, in synchronized
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/users/Finch/.local/lib/python3.12/site-packages/pyrem/task.py", line 146, in stop
+    self._stop()
+  File "/users/Finch/.local/lib/python3.12/site-packages/pyrem/task.py", line 345, in _stop
+    kill_proc.wait()
+  File "/usr/lib/python3.12/subprocess.py", line 1264, in wait
+    return self._wait(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 2053, in _wait
+    (pid, sts) = self._try_wait(0)
+                 ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 2011, in _try_wait
+    (pid, sts) = os.waitpid(self.pid, wait_flags)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+Traceback (most recent call last):
+  File "/users/Finch/.local/lib/python3.12/site-packages/pyrem/task.py", line 42, in cleanup
+    task.stop()
+  File "<decorator-gen-4>", line 2, in stop
+  File "/users/Finch/.local/lib/python3.12/site-packages/pyrem/utils.py", line 19, in synchronized
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/users/Finch/.local/lib/python3.12/site-packages/pyrem/task.py", line 146, in stop
+    self._stop()
+  File "/users/Finch/.local/lib/python3.12/site-packages/pyrem/task.py", line 345, in _stop
+    kill_proc.wait()
+  File "/usr/lib/python3.12/subprocess.py", line 1264, in wait
+    return self._wait(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 2053, in _wait
+    (pid, sts) = self._try_wait(0)
+                 ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 2011, in _try_wait
+    (pid, sts) = os.waitpid(self.pid, wait_flags)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+Traceback (most recent call last):
+  File "/users/Finch/.local/lib/python3.12/site-packages/pyrem/task.py", line 42, in cleanup
+    task.stop()
+  File "<decorator-gen-4>", line 2, in stop
+  File "/users/Finch/.local/lib/python3.12/site-packages/pyrem/utils.py", line 19, in synchronized
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/users/Finch/.local/lib/python3.12/site-packages/pyrem/task.py", line 146, in stop
+    self._stop()
+  File "/users/Finch/.local/lib/python3.12/site-packages/pyrem/task.py", line 427, in _stop
+    task.stop()
+  File "<decorator-gen-4>", line 2, in stop
+  File "/users/Finch/.local/lib/python3.12/site-packages/pyrem/utils.py", line 19, in synchronized
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/users/Finch/.local/lib/python3.12/site-packages/pyrem/task.py", line 146, in stop
+    self._stop()
+  File "/users/Finch/.local/lib/python3.12/site-packages/pyrem/task.py", line 345, in _stop
+    kill_proc.wait()
+  File "/usr/lib/python3.12/subprocess.py", line 1264, in wait
+    return self._wait(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 2053, in _wait
+    (pid, sts) = self._try_wait(0)
+                 ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 2011, in _try_wait
+    (pid, sts) = os.waitpid(self.pid, wait_flags)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+

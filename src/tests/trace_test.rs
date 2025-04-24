@@ -49,7 +49,7 @@ impl Test for TraceTest {
         "Dir Contention Test"
     }
 
-    fn set_config(&mut self, config: String, unique_id: usize, all_task_cnt: usize, dir_out: String) {
+    fn set_config(&mut self, config: String, unique_id: usize, all_task_cnt: usize, dir_out: String, reuse_init: bool) {
         self.conf = Some(toml::from_str(&config).unwrap());
         self.unique_id = unique_id;
         self.all_task_cnt = all_task_cnt;

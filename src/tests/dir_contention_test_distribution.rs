@@ -18,7 +18,7 @@ struct TestConfig {
     pub root_path: String,
     pub dir_cnt: usize,
     pub dir_size: usize,
-    //pub distribution_type: String,
+    pub distribution_type: String,
     pub zipf_s: f64,
     pub op_per_spawn: usize,
 }
@@ -28,6 +28,7 @@ pub struct DirContentionTest {
     unique_id: usize,
     all_task_cnt: usize,
     dir_out: String,
+    reuse_init: bool,
 
     //Then starts the unique part for the test.
     clients: Vec<Client>,
@@ -45,6 +46,7 @@ impl DirContentionTest {
             file_ps: vec![],
             dir_out: "".to_string(),
             logs: vec![],
+            reuse_init: false,
         }
     }
 }
@@ -54,11 +56,12 @@ impl Test for DirContentionTest {
         "Dir Contention Test"
     }
 
-    fn set_config(&mut self, config: String, unique_id: usize, all_task_cnt: usize, dir_out: String) {
+    fn set_config(&mut self, config: String, unique_id: usize, all_task_cnt: usize, dir_out: String, reuse_init: bool) {
         self.conf = Some(toml::from_str(&config).unwrap());
         self.unique_id = unique_id;
         self.all_task_cnt = all_task_cnt;
         self.dir_out = dir_out;
+        self.reuse_init = reuse_init;
     }
 
     //#[tokio::main]
@@ -131,6 +134,9 @@ impl DirContentionTest {
 
         let duty_dir = my_dir_init_duty(self.all_task_cnt, self.unique_id, &conf);
         for i in duty_dir.iter() {
+            if self.reuse_init {
+                break;
+            }
             let re = self.clients[0].create_dir(&dir_ps[*i]);
             if let Err(e) = re.await {
                 panic!("Error! mkdir {}, err:{:?}", dir_ps[*i], e);
@@ -140,6 +146,9 @@ impl DirContentionTest {
         let all_file_ps = all_file_ps_gen(self.all_task_cnt, &conf);
 
         for dir_id in duty_dir.iter() {
+            if self.reuse_init {
+                break;
+            }
             for p1 in all_file_ps.iter() {
                 for file_path in p1[*dir_id].iter() {
                     let re = self.clients[0].file_create(file_path).await;
@@ -166,14 +175,21 @@ impl DirContentionTest {
         let dist = Zipf::new(conf.dir_cnt as f64, conf.zipf_s).unwrap();
         let mut rng = rand::rng();
 
-        let mut rng = StdRng::seed_from_u64(self.unique_id as u64);
+        //let mut rng = StdRng::seed_from_u64(self.unique_id as u64);
         for i in 0..conf.max_parallel {
             self.file_ps.push(vec![]);
 
             for _ in 0..conf.op_per_spawn {
+                let v1 = all_file_ps.choose(&mut rng).unwrap();
+                let v2 = if conf.distribution_type == "zipf" {
+                    &v1[(rng.sample(dist) as usize) % conf.dir_cnt]
+                } else if conf.distribution_type == "even" {
+                    v1.choose(&mut rng).unwrap()
+                } else {
+                    panic!("Type not recognize:{}", conf.distribution_type)
+                };
                 self.file_ps[i].push(
-                    all_file_ps.choose(&mut rng).unwrap()[(rng.sample(dist) as usize) % conf.dir_cnt]
-                        .choose(&mut rng)
+                    v2.choose(&mut rng)
                         .unwrap()
                         .clone(),
                 );

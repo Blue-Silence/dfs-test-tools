@@ -23,6 +23,7 @@ pub struct DirContentionTest {
     unique_id: usize,
     all_task_cnt: usize,
     dir_out: String,
+    reuse_init: bool,
 
     //Then starts the unique part for the test.
     clients: Vec<Client>,
@@ -38,6 +39,7 @@ impl DirContentionTest {
             clients: vec![],
             file_ps: vec![],
             dir_out: "".to_string(),
+            reuse_init: false,
         }
     }
 }
@@ -47,11 +49,12 @@ impl Test for DirContentionTest {
         "Dir Contention Test"
     }
 
-    fn set_config(&mut self, config: String, unique_id: usize, all_task_cnt: usize, dir_out: String) {
+    fn set_config(&mut self, config: String, unique_id: usize, all_task_cnt: usize, dir_out: String, reuse_init: bool) {
         self.conf = Some(toml::from_str(&config).unwrap());
         self.unique_id = unique_id;
         self.all_task_cnt = all_task_cnt;
         self.dir_out = dir_out;
+        self.reuse_init = reuse_init;
     }
 
     //#[tokio::main]
@@ -121,6 +124,9 @@ impl DirContentionTest {
 
         let duty_dir = my_dir_init_duty(self.all_task_cnt, self.unique_id, &conf);
         for i in duty_dir.iter() {
+            if self.reuse_init {
+                break;
+            }
             let re = self.clients[0].create_dir(&dir_ps[*i]);
                 if let Err(e) = re.await {
                     panic!("Error! mkdir {}, err:{:?}", dir_ps[*i], e);
@@ -130,6 +136,9 @@ impl DirContentionTest {
         let all_file_ps = all_file_ps_gen(self.all_task_cnt, &conf);
 
         for dir_id in duty_dir.iter() {
+            if self.reuse_init {
+                break;
+            }
             for p1 in all_file_ps.iter() {
                 for file_path in p1[*dir_id].iter() {
                     let re = self.clients[0].file_create(file_path).await;
