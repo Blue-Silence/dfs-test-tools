@@ -63,12 +63,12 @@ class RemoteProgramThread(threading.Thread):
             output_line = ssh_stdout.readline()
             if output_line:
                 output += output_line
-                print(f"{self.command}: {self.blocking_output_1} not in {output}")
                 # print(f"Program output: {output_line.strip()}")  # 打印实时输出（可选）
             
             # 检查是否已到达阻塞点（例如包含指定的字符串）
             if self.blocking_output_2 in output:
                 break
+            print(f"{self.command}: {self.blocking_output_2} not in {output}")
 
         end_time = time.perf_counter()  # 获取结束时间
         # print("Hit!")

@@ -17,6 +17,6 @@ rand_distr = "0.5.1"
 
 
 [features]
-default = ["infinifs_client"]
+default = ["native_client"]
 native_client = []
 infinifs_client = ["mds"]

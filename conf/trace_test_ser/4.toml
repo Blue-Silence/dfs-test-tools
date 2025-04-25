@@ -1,0 +1,7 @@
+
+    trace_path = "./0.log"
+    thread = 16
+    max_parallel = 60
+    root_path = "/mnt/beegfs/foo"
+    iter_per_spawn = 2
+                    

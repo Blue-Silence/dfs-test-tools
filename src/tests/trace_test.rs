@@ -1,13 +1,12 @@
 use serde::Deserialize;
-use std::sync::Arc;
+use std::{iter::zip, sync::Arc, time::SystemTime};
 use tokio::sync::Mutex;
 
 use crate::{
-    trace::{
+    test_log::TestLog, trace::{
         trace_exec::TraceEngine,
         trace_parse::{parse_trace, TraceEvent},
-    },
-    ClientGen, Test,
+    }, ClientGen, Test
 };
 
 #[derive(Deserialize, Debug, Clone)]
@@ -27,7 +26,8 @@ pub struct TraceTest {
     dir_out: String,
 
     //Then starts the unique part for the test.
-    engines: Vec<Arc<Mutex<TraceEngine>>>,
+    engines: Vec<TraceEngine>,//Vec<Arc<Mutex<TraceEngine>>>,
+    logs: Vec<TestLog>,
     events: Vec<TraceEvent>,
 }
 
@@ -40,6 +40,7 @@ impl TraceTest {
             engines: vec![],
             events: vec![],
             dir_out: "".to_string(),
+            logs: vec![],
         }
     }
 }
@@ -91,10 +92,14 @@ impl TraceTest {
         self.events = parse_trace(inp.as_str()).unwrap();
 
         for _ in 0..conf.max_parallel {
+            /* 
             self.engines
                 .push(std::sync::Arc::new(Mutex::new(TraceEngine::new(
                     c_gen.new_client(),
                 ))));
+            */
+            self.engines.push(TraceEngine::new(c_gen.new_client()));
+            self.logs.push(TestLog::new(conf.iter_per_spawn * self.events.len()));
         }
         return true;
     }
@@ -106,22 +111,31 @@ impl TraceTest {
             let events = &self.events;
             let unique_id = &self.unique_id;
             let root_path = conf.root_path.as_str();
-            for i in 0..conf.max_parallel {
-                let engine = self.engines[i].clone();
+
+            //for (i, engine) in self.engines.iter_mut().enumerate() {
+
+            //}
+
+            // for i in 0..conf.max_parallel {
+            let mut z = zip(self.engines.iter_mut(), self.logs.iter_mut());
+            //for (i, engine) in self.engines.iter_mut().enumerate() {
+            for (i, (engine, log)) in z.enumerate() {
+                //let engine = self.engines[i].clone();
                 let root_path = root_path;
                 s.spawn(async move {
                     for j in 0..conf.iter_per_spawn {
                         for event in events {
                             //println!("Execing: {:?}", event);
+                            let t1 = SystemTime::now();
                             engine
-                                .lock()
-                                .await
                                 .exec(
                                     event.clone(),
                                     format!("_{}_{}_{}", unique_id, i, j).as_str(),
                                     root_path,
                                 )
                                 .await;
+                            let t2 = SystemTime::now();
+                            log.push(event2id(&event), t2.duration_since(t1).unwrap().as_micros() as usize);
                         }
                     }
                 });
@@ -129,5 +143,18 @@ impl TraceTest {
         });
 
         return true;
+    }
+}
+
+
+fn event2id(t: &TraceEvent) -> &'static str {
+    match t {
+        TraceEvent::Create { path, address } => "1",
+        TraceEvent::Mkdir { path } => "2",
+        TraceEvent::Close { address } => "3",
+        TraceEvent::Open { path, address } => "4",
+        TraceEvent::Delete { path } => "5",
+        TraceEvent::FileStat { path } => "6",
+        TraceEvent::DirStat { path } => "7",
     }
 }
