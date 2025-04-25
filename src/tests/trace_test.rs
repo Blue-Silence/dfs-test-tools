@@ -1,6 +1,6 @@
 use serde::Deserialize;
-use std::{iter::zip, sync::Arc, time::SystemTime};
-use tokio::sync::Mutex;
+use std::{fs::File, iter::zip, sync::Arc, time::SystemTime};
+use std::io::{self, Write};
 
 use crate::{
     test_log::TestLog, trace::{
@@ -141,6 +141,17 @@ impl TraceTest {
                 });
             }
         });
+
+        let mut out_f = File::create(format!("{}/{}.log", self.dir_out, self.unique_id)).unwrap();
+        for log in self.logs.iter_mut() {
+            loop {
+                let s = log.pop();
+                if let None = s {
+                    break;
+                }
+                write!(out_f, "{}\n", s.unwrap()).unwrap();
+            }
+        }
 
         return true;
     }
