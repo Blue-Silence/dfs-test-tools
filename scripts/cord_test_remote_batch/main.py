@@ -15,7 +15,7 @@ from config import conf
 
 
 if __name__ == '__main__': 
-    for i in range(0,15): 
+    for i in range(0,10): 
         for j in range(0,3):
             test_id = f'{i}-{j}'
             print(f'Test {test_id} start')

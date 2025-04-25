@@ -40,7 +40,7 @@ class RemoteProgramThread(threading.Thread):
             if self.blocking_output_1 in output:
                 break
             else:
-                print(f"{self.blocking_output_1} not in {output}")
+                print(f"{self.command}: {self.blocking_output_1} not in {output}")
                 # print(ssh_stdout.read().decode())
                 # print(ssh_stderr.read().decode())
                 exit(1)

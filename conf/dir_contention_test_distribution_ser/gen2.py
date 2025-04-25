@@ -1,13 +1,13 @@
 import os
 
-ROOT_PATH = "/mnt/beegfs/foo"
+ROOT_PATH = ""
 
 i = 0
-for dir_size in [500, 1000, 2000]:
-    for max_parallel in [1, 3, 5, 10]:
+for dir_size in [500, 1000]:
+    for max_parallel in [10, 20, 30, 40, 50]:
         with open(f'./{i}.toml', 'w') as f:
             f.write(f"""
-    thread = 8
+    thread = 4
     max_parallel = {max_parallel}
     root_path = "{ROOT_PATH}"
     dir_cnt = 200

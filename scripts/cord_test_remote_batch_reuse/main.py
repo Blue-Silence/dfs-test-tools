@@ -16,7 +16,7 @@ from config import conf
 run_cnt = 0
 
 if __name__ == '__main__': 
-    for i in range(0, 15): 
+    for i in range(0, 40): 
         for j in range(0,3):
             test_id = f'{i}-{j}'
             print(f'Test {test_id} start')
@@ -24,13 +24,14 @@ if __name__ == '__main__':
             conf_t.TEST_ID = i
             conf_t.LOCAL_FILES.append(
                 # (f'{conf.LOCAL_PROJ_PATH}/conf/dir_contention_test_ser/dir_contention_test_{i}.toml', 'conf.toml')
-                (f'{conf.LOCAL_PROJ_PATH}/conf/dir_contention_test_distribution_ser/{i}.toml', 'conf.toml')
+                # (f'{conf.LOCAL_PROJ_PATH}/conf/dir_contention_test_distribution_ser/{i}.toml', 'conf.toml')
+                (f'{conf.LOCAL_PROJ_PATH}/conf/dir_sync_test_ser/{i}.toml', 'conf.toml')
             )
-            if run_cnt == 0:
+            if run_cnt % 8 == 0 :
                 conf_t.REUSE_INIT = False
             if not conf_t.REUSE_INIT:
                 None
-                #clean_up(conf_t)
+                # clean_up(conf_t)
             run_compile(conf_t)  
             dist_remote(conf_t)
             start_all()

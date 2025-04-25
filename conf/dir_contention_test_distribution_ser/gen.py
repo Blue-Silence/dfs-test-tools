@@ -3,7 +3,7 @@ import os
 ROOT_PATH = ""
 
 i = 0
-for max_parallel in [5, 10, 30]:
+for max_parallel in [5, 10, 30, 20]:
     for zipf_s in [0.1, 0.5, 1, 2, 4]:
         with open(f'./{i}.toml', 'w') as f:
             f.write(f"""

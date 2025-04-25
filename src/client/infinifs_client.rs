@@ -43,13 +43,23 @@ impl FSClient for InfinifsClient {
             if !test_lock(&re) {
                 return to_re(re);
             }
+            //println!("CREATE_DIR Looping for lock");
             tokio::time::sleep(tokio::time::Duration::from_micros(1000)).await;
         }
     }
 
     async fn dir_change_permission(&mut self, path: &String, mode: u32) -> Result<(), String> {
-        let re = self.cli.dir_set_permission(path, ROOT_PERMISSION()).await;
-        to_re(re)
+        //let re = self.cli.dir_set_permission(path, ROOT_PERMISSION()).await;
+        //to_re(re)
+
+        loop {
+            let re = self.cli.dir_set_permission(path, ROOT_PERMISSION()).await;
+            if !test_lock(&re) {
+                return to_re(re);
+            }
+            //println!("CREATE_DIR Looping for lock");
+            tokio::time::sleep(tokio::time::Duration::from_micros(1000)).await;
+        }
     }
 
     async fn file_change_permission(&mut self, path: &String, mode: u32) -> Result<(), String> {
@@ -75,6 +85,7 @@ impl FSClient for InfinifsClient {
             if !test_lock(&re) {
                 return to_re(re);
             }
+            //println!("STAT Looping for lock");
             tokio::time::sleep(tokio::time::Duration::from_micros(1000)).await;
         }
     }

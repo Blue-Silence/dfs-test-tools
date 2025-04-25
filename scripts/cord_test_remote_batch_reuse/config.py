@@ -35,7 +35,7 @@ conf.FEATURES = [
 
 conf.TEST_PROGRAM = "main"
 
-conf.TEST_NAME = 'DirContentionTestDistribution'
+conf.TEST_NAME = 'DirSyncPairTest'
 
 conf.TEST_CONF = 'conf.toml'
 

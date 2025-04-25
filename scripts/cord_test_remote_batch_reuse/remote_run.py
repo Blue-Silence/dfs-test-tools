@@ -40,10 +40,10 @@ class RemoteProgramThread(threading.Thread):
             if self.blocking_output_1 in output:
                 break
             else:
-                print(f"{self.blocking_output_1} not in {output}")
+                print(f"{self.command}: {self.blocking_output_1} not in {output}")
                 # print(ssh_stdout.read().decode())
                 # print(ssh_stderr.read().decode())
-                # exit(1)
+                #exit(1)
 
         # 到达阻塞点后，等待其他程序一起同步
         #print('Barrier 1 reached')
@@ -63,6 +63,7 @@ class RemoteProgramThread(threading.Thread):
             output_line = ssh_stdout.readline()
             if output_line:
                 output += output_line
+                print(f"{self.command}: {self.blocking_output_1} not in {output}")
                 # print(f"Program output: {output_line.strip()}")  # 打印实时输出（可选）
             
             # 检查是否已到达阻塞点（例如包含指定的字符串）
