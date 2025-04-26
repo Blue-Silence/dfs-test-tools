@@ -35,7 +35,7 @@ conf.FEATURES = [
 
 conf.TEST_PROGRAM = "main"
 
-conf.TEST_NAME = 'DirSyncPairTest'
+conf.TEST_NAME = 'DirSyncSinglePointTest'
 
 conf.TEST_CONF = 'conf.toml'
 
@@ -43,6 +43,6 @@ conf.OUT_PREFIX = '/local/perf'
 
 conf.REMOTE_TEST_ROOT = ''
 
-conf.PARALLELISM = 6
+conf.PARALLELISM = 1
 
 conf.REUSE_INIT = False

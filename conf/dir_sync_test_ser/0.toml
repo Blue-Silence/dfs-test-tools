@@ -1,6 +1,6 @@
 
     thread = 4
-    max_parallel = 5
+    max_parallel = 10
     root_path = ""
     file_per_spawn = 2000
     op_per_spawn = 20000

@@ -96,15 +96,21 @@ impl FSClient for InfinifsClient {
     }
 
     async fn file_create(&mut self, path: &String) -> Result<FD, String> {
-        let (dir_path, name) = split_path(path);
-        let name = name.as_bytes().to_vec();
-        let re = self
-            .cli
-            .file_create(&dir_path, &name, 123, ROOT_PERMISSION(), true)
-            .await;
-        match re {
-            Ok(pid) => Ok((pid, name)),
-            Err(e) => Err(format!("{:?}", e)),
+        loop {
+            let (dir_path, name) = split_path(path);
+            let name = name.as_bytes().to_vec();
+            let re = self
+                .cli
+                .file_create(&dir_path, &name, 123, ROOT_PERMISSION(), true)
+                .await;
+            if test_lock(&re) {
+                tokio::time::sleep(tokio::time::Duration::from_micros(1000)).await;
+                continue;
+            }
+            match re {
+                Ok(pid) => Ok((pid, name)),
+                Err(e) => Err(format!("{:?}", e)),
+            };  
         }
     }
 
@@ -113,7 +119,7 @@ impl FSClient for InfinifsClient {
         match re {
             Ok(_) => Ok(true),
             Err(e) => match e {
-                mds::client::user_error::UserError::PathNotExist() => Ok(false),
+                mds::client::user_error::UserError::RemoteError(mds::error::Error::MDSError(mds::error::MDSError::NotExist(_))) =>Ok(false),
                 _ => Err(format!("{:?}", e)),
             },
         }
